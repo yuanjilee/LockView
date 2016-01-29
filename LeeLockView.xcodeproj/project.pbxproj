@@ -14,13 +14,6 @@
 		7A4DEC251C5B173B00A2515D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DEC231C5B173B00A2515D /* LaunchScreen.storyboard */; };
 		7A4DEC301C5B173B00A2515D /* LeeLockViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC2F1C5B173B00A2515D /* LeeLockViewTests.swift */; };
 		7A4DEC3B1C5B173B00A2515D /* LeeLockViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC3A1C5B173B00A2515D /* LeeLockViewUITests.swift */; };
-		7A4DEC601C5B19E500A2515D /* LockIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC591C5B19E500A2515D /* LockIndicatorView.swift */; };
-		7A4DEC611C5B19E500A2515D /* LockInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5A1C5B19E500A2515D /* LockInfoStorage.swift */; };
-		7A4DEC621C5B19E500A2515D /* LockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5B1C5B19E500A2515D /* LockItemView.swift */; };
-		7A4DEC631C5B19E500A2515D /* LockPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5C1C5B19E500A2515D /* LockPreference.swift */; };
-		7A4DEC641C5B19E500A2515D /* LockSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5D1C5B19E500A2515D /* LockSettingViewController.swift */; };
-		7A4DEC651C5B19E500A2515D /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5E1C5B19E500A2515D /* LockView.swift */; };
-		7A4DEC661C5B19E500A2515D /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5F1C5B19E500A2515D /* LockViewController.swift */; };
 		7A4DEC761C5B1A1800A2515D /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC681C5B1A1800A2515D /* Constraint.swift */; };
 		7A4DEC771C5B1A1800A2515D /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC691C5B1A1800A2515D /* ConstraintAttributes.swift */; };
 		7A4DEC781C5B1A1800A2515D /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC6A1C5B1A1800A2515D /* ConstraintDescription.swift */; };
@@ -38,6 +31,13 @@
 		7A4DEC8D1C5B40B900A2515D /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC8C1C5B40B900A2515D /* DemoTableViewController.swift */; };
 		7A4DEC8F1C5B451700A2515D /* navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DEC8E1C5B451700A2515D /* navigation_back@2x.png */; };
 		7A4DEC9D1C5B4CA500A2515D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DEC9F1C5B4CA500A2515D /* Localizable.strings */; };
+		7A4DECE91C5B720500A2515D /* LockIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DECE21C5B720500A2515D /* LockIndicatorView.swift */; };
+		7A4DECEA1C5B720500A2515D /* LockInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DECE31C5B720500A2515D /* LockInfoStorage.swift */; };
+		7A4DECEB1C5B720500A2515D /* LockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DECE41C5B720500A2515D /* LockItemView.swift */; };
+		7A4DECEC1C5B720500A2515D /* LockPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DECE51C5B720500A2515D /* LockPreference.swift */; };
+		7A4DECED1C5B720500A2515D /* LockSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DECE61C5B720500A2515D /* LockSettingViewController.swift */; };
+		7A4DECEE1C5B720500A2515D /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DECE71C5B720500A2515D /* LockView.swift */; };
+		7A4DECEF1C5B720500A2515D /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DECE81C5B720500A2515D /* LockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,13 +71,6 @@
 		7A4DEC361C5B173B00A2515D /* LeeLockViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeeLockViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4DEC3A1C5B173B00A2515D /* LeeLockViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeeLockViewUITests.swift; sourceTree = "<group>"; };
 		7A4DEC3C1C5B173B00A2515D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A4DEC591C5B19E500A2515D /* LockIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockIndicatorView.swift; sourceTree = "<group>"; };
-		7A4DEC5A1C5B19E500A2515D /* LockInfoStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockInfoStorage.swift; sourceTree = "<group>"; };
-		7A4DEC5B1C5B19E500A2515D /* LockItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockItemView.swift; sourceTree = "<group>"; };
-		7A4DEC5C1C5B19E500A2515D /* LockPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockPreference.swift; sourceTree = "<group>"; };
-		7A4DEC5D1C5B19E500A2515D /* LockSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockSettingViewController.swift; sourceTree = "<group>"; };
-		7A4DEC5E1C5B19E500A2515D /* LockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
-		7A4DEC5F1C5B19E500A2515D /* LockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
 		7A4DEC681C5B1A1800A2515D /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		7A4DEC691C5B1A1800A2515D /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
 		7A4DEC6A1C5B1A1800A2515D /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
@@ -99,6 +92,13 @@
 		7A4DEC8E1C5B451700A2515D /* navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_back@2x.png"; sourceTree = "<group>"; };
 		7A4DEC9E1C5B4CA500A2515D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A4DECA01C5B4CBF00A2515D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7A4DECE21C5B720500A2515D /* LockIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockIndicatorView.swift; sourceTree = "<group>"; };
+		7A4DECE31C5B720500A2515D /* LockInfoStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockInfoStorage.swift; sourceTree = "<group>"; };
+		7A4DECE41C5B720500A2515D /* LockItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockItemView.swift; sourceTree = "<group>"; };
+		7A4DECE51C5B720500A2515D /* LockPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockPreference.swift; sourceTree = "<group>"; };
+		7A4DECE61C5B720500A2515D /* LockSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockSettingViewController.swift; sourceTree = "<group>"; };
+		7A4DECE71C5B720500A2515D /* LockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		7A4DECE81C5B720500A2515D /* LockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +129,9 @@
 		7A4DEC0E1C5B173B00A2515D = {
 			isa = PBXGroup;
 			children = (
+				7A4DECE11C5B720500A2515D /* LockView */,
 				7A4DEC921C5B49A500A2515D /* Local */,
 				7A4DEC871C5B1E5200A2515D /* Extension */,
-				7A4DEC581C5B19E500A2515D /* LockView */,
 				7A4DEC671C5B1A1800A2515D /* SnapKit */,
 				7A4DEC191C5B173B00A2515D /* LeeLockView */,
 				7A4DEC2E1C5B173B00A2515D /* LeeLockViewTests */,
@@ -184,21 +184,6 @@
 			path = LeeLockViewUITests;
 			sourceTree = "<group>";
 		};
-		7A4DEC581C5B19E500A2515D /* LockView */ = {
-			isa = PBXGroup;
-			children = (
-				7A4DEC591C5B19E500A2515D /* LockIndicatorView.swift */,
-				7A4DEC5A1C5B19E500A2515D /* LockInfoStorage.swift */,
-				7A4DEC5B1C5B19E500A2515D /* LockItemView.swift */,
-				7A4DEC5D1C5B19E500A2515D /* LockSettingViewController.swift */,
-				7A4DEC5E1C5B19E500A2515D /* LockView.swift */,
-				7A4DEC5F1C5B19E500A2515D /* LockViewController.swift */,
-				7A4DEC5C1C5B19E500A2515D /* LockPreference.swift */,
-			);
-			name = LockView;
-			path = LeeLockView/LockView;
-			sourceTree = "<group>";
-		};
 		7A4DEC671C5B1A1800A2515D /* SnapKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +220,20 @@
 				7A4DEC9F1C5B4CA500A2515D /* Localizable.strings */,
 			);
 			name = Local;
+			sourceTree = "<group>";
+		};
+		7A4DECE11C5B720500A2515D /* LockView */ = {
+			isa = PBXGroup;
+			children = (
+				7A4DECE21C5B720500A2515D /* LockIndicatorView.swift */,
+				7A4DECE31C5B720500A2515D /* LockInfoStorage.swift */,
+				7A4DECE41C5B720500A2515D /* LockItemView.swift */,
+				7A4DECE51C5B720500A2515D /* LockPreference.swift */,
+				7A4DECE61C5B720500A2515D /* LockSettingViewController.swift */,
+				7A4DECE71C5B720500A2515D /* LockView.swift */,
+				7A4DECE81C5B720500A2515D /* LockViewController.swift */,
+			);
+			path = LockView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,28 +372,28 @@
 			files = (
 				7A4DEC1D1C5B173B00A2515D /* ViewController.swift in Sources */,
 				7A4DEC7B1C5B1A1800A2515D /* ConstraintRelation.swift in Sources */,
-				7A4DEC631C5B19E500A2515D /* LockPreference.swift in Sources */,
 				7A4DEC7F1C5B1A1800A2515D /* SnapKit.swift in Sources */,
+				7A4DECEF1C5B720500A2515D /* LockViewController.swift in Sources */,
 				7A4DEC861C5B1CA400A2515D /* UIColor+DYKAddition.m in Sources */,
 				7A4DEC791C5B1A1800A2515D /* ConstraintItem.swift in Sources */,
 				7A4DEC811C5B1A1800A2515D /* View+SnapKit.swift in Sources */,
-				7A4DEC641C5B19E500A2515D /* LockSettingViewController.swift in Sources */,
 				7A4DEC1B1C5B173B00A2515D /* AppDelegate.swift in Sources */,
+				7A4DECEC1C5B720500A2515D /* LockPreference.swift in Sources */,
 				7A4DEC7C1C5B1A1800A2515D /* Debugging.swift in Sources */,
 				7A4DEC771C5B1A1800A2515D /* ConstraintAttributes.swift in Sources */,
-				7A4DEC621C5B19E500A2515D /* LockItemView.swift in Sources */,
 				7A4DEC821C5B1A1800A2515D /* ViewController+SnapKit.swift in Sources */,
-				7A4DEC651C5B19E500A2515D /* LockView.swift in Sources */,
-				7A4DEC661C5B19E500A2515D /* LockViewController.swift in Sources */,
 				7A4DEC7A1C5B1A1800A2515D /* ConstraintMaker.swift in Sources */,
+				7A4DECE91C5B720500A2515D /* LockIndicatorView.swift in Sources */,
+				7A4DECEB1C5B720500A2515D /* LockItemView.swift in Sources */,
 				7A4DEC801C5B1A1800A2515D /* SourceLocation.swift in Sources */,
-				7A4DEC611C5B19E500A2515D /* LockInfoStorage.swift in Sources */,
+				7A4DECEA1C5B720500A2515D /* LockInfoStorage.swift in Sources */,
 				7A4DEC761C5B1A1800A2515D /* Constraint.swift in Sources */,
 				7A4DEC7E1C5B1A1800A2515D /* LayoutConstraint.swift in Sources */,
 				7A4DEC8D1C5B40B900A2515D /* DemoTableViewController.swift in Sources */,
 				7A4DEC7D1C5B1A1800A2515D /* EdgeInsets.swift in Sources */,
-				7A4DEC601C5B19E500A2515D /* LockIndicatorView.swift in Sources */,
+				7A4DECED1C5B720500A2515D /* LockSettingViewController.swift in Sources */,
 				7A4DEC781C5B1A1800A2515D /* ConstraintDescription.swift in Sources */,
+				7A4DECEE1C5B720500A2515D /* LockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
