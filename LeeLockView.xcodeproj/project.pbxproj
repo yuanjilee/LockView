@@ -14,6 +14,30 @@
 		7A4DEC251C5B173B00A2515D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DEC231C5B173B00A2515D /* LaunchScreen.storyboard */; };
 		7A4DEC301C5B173B00A2515D /* LeeLockViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC2F1C5B173B00A2515D /* LeeLockViewTests.swift */; };
 		7A4DEC3B1C5B173B00A2515D /* LeeLockViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC3A1C5B173B00A2515D /* LeeLockViewUITests.swift */; };
+		7A4DEC601C5B19E500A2515D /* LockIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC591C5B19E500A2515D /* LockIndicatorView.swift */; };
+		7A4DEC611C5B19E500A2515D /* LockInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5A1C5B19E500A2515D /* LockInfoStorage.swift */; };
+		7A4DEC621C5B19E500A2515D /* LockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5B1C5B19E500A2515D /* LockItemView.swift */; };
+		7A4DEC631C5B19E500A2515D /* LockPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5C1C5B19E500A2515D /* LockPreference.swift */; };
+		7A4DEC641C5B19E500A2515D /* LockSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5D1C5B19E500A2515D /* LockSettingViewController.swift */; };
+		7A4DEC651C5B19E500A2515D /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5E1C5B19E500A2515D /* LockView.swift */; };
+		7A4DEC661C5B19E500A2515D /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5F1C5B19E500A2515D /* LockViewController.swift */; };
+		7A4DEC761C5B1A1800A2515D /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC681C5B1A1800A2515D /* Constraint.swift */; };
+		7A4DEC771C5B1A1800A2515D /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC691C5B1A1800A2515D /* ConstraintAttributes.swift */; };
+		7A4DEC781C5B1A1800A2515D /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC6A1C5B1A1800A2515D /* ConstraintDescription.swift */; };
+		7A4DEC791C5B1A1800A2515D /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC6B1C5B1A1800A2515D /* ConstraintItem.swift */; };
+		7A4DEC7A1C5B1A1800A2515D /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC6C1C5B1A1800A2515D /* ConstraintMaker.swift */; };
+		7A4DEC7B1C5B1A1800A2515D /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC6D1C5B1A1800A2515D /* ConstraintRelation.swift */; };
+		7A4DEC7C1C5B1A1800A2515D /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC6E1C5B1A1800A2515D /* Debugging.swift */; };
+		7A4DEC7D1C5B1A1800A2515D /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC6F1C5B1A1800A2515D /* EdgeInsets.swift */; };
+		7A4DEC7E1C5B1A1800A2515D /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC701C5B1A1800A2515D /* LayoutConstraint.swift */; };
+		7A4DEC7F1C5B1A1800A2515D /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC721C5B1A1800A2515D /* SnapKit.swift */; };
+		7A4DEC801C5B1A1800A2515D /* SourceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC731C5B1A1800A2515D /* SourceLocation.swift */; };
+		7A4DEC811C5B1A1800A2515D /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC741C5B1A1800A2515D /* View+SnapKit.swift */; };
+		7A4DEC821C5B1A1800A2515D /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC751C5B1A1800A2515D /* ViewController+SnapKit.swift */; };
+		7A4DEC861C5B1CA400A2515D /* UIColor+DYKAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC851C5B1CA400A2515D /* UIColor+DYKAddition.m */; };
+		7A4DEC8D1C5B40B900A2515D /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC8C1C5B40B900A2515D /* DemoTableViewController.swift */; };
+		7A4DEC8F1C5B451700A2515D /* navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DEC8E1C5B451700A2515D /* navigation_back@2x.png */; };
+		7A4DEC9D1C5B4CA500A2515D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DEC9F1C5B4CA500A2515D /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +71,34 @@
 		7A4DEC361C5B173B00A2515D /* LeeLockViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeeLockViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4DEC3A1C5B173B00A2515D /* LeeLockViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeeLockViewUITests.swift; sourceTree = "<group>"; };
 		7A4DEC3C1C5B173B00A2515D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A4DEC591C5B19E500A2515D /* LockIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockIndicatorView.swift; sourceTree = "<group>"; };
+		7A4DEC5A1C5B19E500A2515D /* LockInfoStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockInfoStorage.swift; sourceTree = "<group>"; };
+		7A4DEC5B1C5B19E500A2515D /* LockItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockItemView.swift; sourceTree = "<group>"; };
+		7A4DEC5C1C5B19E500A2515D /* LockPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockPreference.swift; sourceTree = "<group>"; };
+		7A4DEC5D1C5B19E500A2515D /* LockSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockSettingViewController.swift; sourceTree = "<group>"; };
+		7A4DEC5E1C5B19E500A2515D /* LockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		7A4DEC5F1C5B19E500A2515D /* LockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
+		7A4DEC681C5B1A1800A2515D /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		7A4DEC691C5B1A1800A2515D /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
+		7A4DEC6A1C5B1A1800A2515D /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
+		7A4DEC6B1C5B1A1800A2515D /* ConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintItem.swift; sourceTree = "<group>"; };
+		7A4DEC6C1C5B1A1800A2515D /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
+		7A4DEC6D1C5B1A1800A2515D /* ConstraintRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelation.swift; sourceTree = "<group>"; };
+		7A4DEC6E1C5B1A1800A2515D /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
+		7A4DEC6F1C5B1A1800A2515D /* EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		7A4DEC701C5B1A1800A2515D /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		7A4DEC711C5B1A1800A2515D /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
+		7A4DEC721C5B1A1800A2515D /* SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKit.swift; sourceTree = "<group>"; };
+		7A4DEC731C5B1A1800A2515D /* SourceLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceLocation.swift; sourceTree = "<group>"; };
+		7A4DEC741C5B1A1800A2515D /* View+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+SnapKit.swift"; sourceTree = "<group>"; };
+		7A4DEC751C5B1A1800A2515D /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SnapKit.swift"; sourceTree = "<group>"; };
+		7A4DEC831C5B1CA300A2515D /* LeeLockView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeeLockView-Bridging-Header.h"; sourceTree = "<group>"; };
+		7A4DEC841C5B1CA400A2515D /* UIColor+DYKAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DYKAddition.h"; sourceTree = "<group>"; };
+		7A4DEC851C5B1CA400A2515D /* UIColor+DYKAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DYKAddition.m"; sourceTree = "<group>"; };
+		7A4DEC8C1C5B40B900A2515D /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
+		7A4DEC8E1C5B451700A2515D /* navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_back@2x.png"; sourceTree = "<group>"; };
+		7A4DEC9E1C5B4CA500A2515D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7A4DECA01C5B4CBF00A2515D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +129,15 @@
 		7A4DEC0E1C5B173B00A2515D = {
 			isa = PBXGroup;
 			children = (
+				7A4DEC921C5B49A500A2515D /* Local */,
+				7A4DEC871C5B1E5200A2515D /* Extension */,
+				7A4DEC581C5B19E500A2515D /* LockView */,
+				7A4DEC671C5B1A1800A2515D /* SnapKit */,
 				7A4DEC191C5B173B00A2515D /* LeeLockView */,
 				7A4DEC2E1C5B173B00A2515D /* LeeLockViewTests */,
 				7A4DEC391C5B173B00A2515D /* LeeLockViewUITests */,
 				7A4DEC181C5B173B00A2515D /* Products */,
+				7A4DEC831C5B1CA300A2515D /* LeeLockView-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +156,10 @@
 			children = (
 				7A4DEC1A1C5B173B00A2515D /* AppDelegate.swift */,
 				7A4DEC1C1C5B173B00A2515D /* ViewController.swift */,
+				7A4DEC8C1C5B40B900A2515D /* DemoTableViewController.swift */,
 				7A4DEC1E1C5B173B00A2515D /* Main.storyboard */,
 				7A4DEC211C5B173B00A2515D /* Assets.xcassets */,
+				7A4DEC8E1C5B451700A2515D /* navigation_back@2x.png */,
 				7A4DEC231C5B173B00A2515D /* LaunchScreen.storyboard */,
 				7A4DEC261C5B173B00A2515D /* Info.plist */,
 			);
@@ -123,6 +182,59 @@
 				7A4DEC3C1C5B173B00A2515D /* Info.plist */,
 			);
 			path = LeeLockViewUITests;
+			sourceTree = "<group>";
+		};
+		7A4DEC581C5B19E500A2515D /* LockView */ = {
+			isa = PBXGroup;
+			children = (
+				7A4DEC591C5B19E500A2515D /* LockIndicatorView.swift */,
+				7A4DEC5A1C5B19E500A2515D /* LockInfoStorage.swift */,
+				7A4DEC5B1C5B19E500A2515D /* LockItemView.swift */,
+				7A4DEC5D1C5B19E500A2515D /* LockSettingViewController.swift */,
+				7A4DEC5E1C5B19E500A2515D /* LockView.swift */,
+				7A4DEC5F1C5B19E500A2515D /* LockViewController.swift */,
+				7A4DEC5C1C5B19E500A2515D /* LockPreference.swift */,
+			);
+			name = LockView;
+			path = LeeLockView/LockView;
+			sourceTree = "<group>";
+		};
+		7A4DEC671C5B1A1800A2515D /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				7A4DEC681C5B1A1800A2515D /* Constraint.swift */,
+				7A4DEC691C5B1A1800A2515D /* ConstraintAttributes.swift */,
+				7A4DEC6A1C5B1A1800A2515D /* ConstraintDescription.swift */,
+				7A4DEC6B1C5B1A1800A2515D /* ConstraintItem.swift */,
+				7A4DEC6C1C5B1A1800A2515D /* ConstraintMaker.swift */,
+				7A4DEC6D1C5B1A1800A2515D /* ConstraintRelation.swift */,
+				7A4DEC6E1C5B1A1800A2515D /* Debugging.swift */,
+				7A4DEC6F1C5B1A1800A2515D /* EdgeInsets.swift */,
+				7A4DEC701C5B1A1800A2515D /* LayoutConstraint.swift */,
+				7A4DEC711C5B1A1800A2515D /* SnapKit.h */,
+				7A4DEC721C5B1A1800A2515D /* SnapKit.swift */,
+				7A4DEC731C5B1A1800A2515D /* SourceLocation.swift */,
+				7A4DEC741C5B1A1800A2515D /* View+SnapKit.swift */,
+				7A4DEC751C5B1A1800A2515D /* ViewController+SnapKit.swift */,
+			);
+			path = SnapKit;
+			sourceTree = "<group>";
+		};
+		7A4DEC871C5B1E5200A2515D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7A4DEC841C5B1CA400A2515D /* UIColor+DYKAddition.h */,
+				7A4DEC851C5B1CA400A2515D /* UIColor+DYKAddition.m */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		7A4DEC921C5B49A500A2515D /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				7A4DEC9F1C5B4CA500A2515D /* Localizable.strings */,
+			);
+			name = Local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +323,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 7A4DEC0E1C5B173B00A2515D;
 			productRefGroup = 7A4DEC181C5B173B00A2515D /* Products */;
@@ -231,7 +344,9 @@
 			files = (
 				7A4DEC251C5B173B00A2515D /* LaunchScreen.storyboard in Resources */,
 				7A4DEC221C5B173B00A2515D /* Assets.xcassets in Resources */,
+				7A4DEC9D1C5B4CA500A2515D /* Localizable.strings in Resources */,
 				7A4DEC201C5B173B00A2515D /* Main.storyboard in Resources */,
+				7A4DEC8F1C5B451700A2515D /* navigation_back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +372,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A4DEC1D1C5B173B00A2515D /* ViewController.swift in Sources */,
+				7A4DEC7B1C5B1A1800A2515D /* ConstraintRelation.swift in Sources */,
+				7A4DEC631C5B19E500A2515D /* LockPreference.swift in Sources */,
+				7A4DEC7F1C5B1A1800A2515D /* SnapKit.swift in Sources */,
+				7A4DEC861C5B1CA400A2515D /* UIColor+DYKAddition.m in Sources */,
+				7A4DEC791C5B1A1800A2515D /* ConstraintItem.swift in Sources */,
+				7A4DEC811C5B1A1800A2515D /* View+SnapKit.swift in Sources */,
+				7A4DEC641C5B19E500A2515D /* LockSettingViewController.swift in Sources */,
 				7A4DEC1B1C5B173B00A2515D /* AppDelegate.swift in Sources */,
+				7A4DEC7C1C5B1A1800A2515D /* Debugging.swift in Sources */,
+				7A4DEC771C5B1A1800A2515D /* ConstraintAttributes.swift in Sources */,
+				7A4DEC621C5B19E500A2515D /* LockItemView.swift in Sources */,
+				7A4DEC821C5B1A1800A2515D /* ViewController+SnapKit.swift in Sources */,
+				7A4DEC651C5B19E500A2515D /* LockView.swift in Sources */,
+				7A4DEC661C5B19E500A2515D /* LockViewController.swift in Sources */,
+				7A4DEC7A1C5B1A1800A2515D /* ConstraintMaker.swift in Sources */,
+				7A4DEC801C5B1A1800A2515D /* SourceLocation.swift in Sources */,
+				7A4DEC611C5B19E500A2515D /* LockInfoStorage.swift in Sources */,
+				7A4DEC761C5B1A1800A2515D /* Constraint.swift in Sources */,
+				7A4DEC7E1C5B1A1800A2515D /* LayoutConstraint.swift in Sources */,
+				7A4DEC8D1C5B40B900A2515D /* DemoTableViewController.swift in Sources */,
+				7A4DEC7D1C5B1A1800A2515D /* EdgeInsets.swift in Sources */,
+				7A4DEC601C5B19E500A2515D /* LockIndicatorView.swift in Sources */,
+				7A4DEC781C5B1A1800A2515D /* ConstraintDescription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +444,15 @@
 				7A4DEC241C5B173B00A2515D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7A4DEC9F1C5B4CA500A2515D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A4DEC9E1C5B4CA500A2515D /* en */,
+				7A4DECA01C5B4CBF00A2515D /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -397,10 +543,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LeeLockView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yuanjilee.LeeLockView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LeeLockView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -408,10 +558,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LeeLockView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yuanjilee.LeeLockView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LeeLockView-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -482,6 +635,7 @@
 				7A4DEC411C5B173B00A2515D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A4DEC421C5B173B00A2515D /* Build configuration list for PBXNativeTarget "LeeLockViewTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +644,7 @@
 				7A4DEC441C5B173B00A2515D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A4DEC451C5B173B00A2515D /* Build configuration list for PBXNativeTarget "LeeLockViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +653,7 @@
 				7A4DEC471C5B173B00A2515D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

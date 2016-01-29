@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    
+    //show lockVC
+    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+      let isOpenGestureLock: Bool? = LockInfoStorage.getSwitchState()
+      if isOpenGestureLock == true {
+        self.showLockViewController()
+      }
+    }
+    
     return true
   }
 
@@ -30,7 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationWillEnterForeground(application: UIApplication) {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    //show lockVC
+    let isOpenGestureLock: Bool? = LockInfoStorage.getSwitchState()
+    if isOpenGestureLock == true {
+      showLockViewController()
+    }
+
   }
 
   func applicationDidBecomeActive(application: UIApplication) {
@@ -40,7 +55,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
-
+  
+  
+  //MARK: - Show LockVC
+  
+  func showLockViewController() {
+    //需要设置: 1. LockViewController line 250 设置连续输错五次后跳转至登陆界面。 2. LockViewController line 355 设置"忘记密码"后跳转至登陆界面. 3. LockViewController line 138 设置网络请求头像
+    
+    LockViewController.showVerifyLockViewController((window?.rootViewController)!);
+  }
 
 }
 

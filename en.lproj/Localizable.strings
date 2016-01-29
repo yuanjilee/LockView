@@ -1,0 +1,31 @@
+
+/*
+  Localization.strings
+  LeeLockView
+
+  Created by yuanjilee on 16/1/29.
+  Copyright © 2016年 yuanjilee. All rights reserved.
+*/
+
+
+///-----------------------------------------
+/// @name Pattern Password
+///-----------------------------------------
+
+"GESTURE_LOCK"                               = "Gesture Lock";
+"PATTERN_PASSWORD"                           = "Pattern Password";
+"FINGERPRINT_UNLOCK"                         = "Fingerprint Unlock";
+"RESET_PASSWORD_GESTURE"                     = "Reset Password gesture";
+"DRAW_GESTURE_PASSWORD"                      = "Draw gesture password";
+"ENTER_THE_GESTURE_PASSWORD"                 = "Enter the gesture password";
+"FORGET_PASSWORD"                            = "Forget Password?";
+"RE_LOGIN_IN"                                = "ReLogin in";
+"INCORRECT_PATTERN"                          = "Unmatched pattern. Set again.";
+"SET_A_PATTERN_PASSWORD"                     = "Set a pattern password";
+"ENTER_AGAIN_FOR_CONFIRAMTION"               = "Enter again for confirmation";
+"AT_LAST_4_POINTS_SET_AGAIN"                 = "At least 4 points. Set again.";
+"CREATING_SUCCESS"                           = "Creating Success";
+"INCORRECT_PATTERN_CHANCE_LEFT"              = "Incorrect pattern. %d chance(s) left";
+"UNLOCK_VALIDATION_WORKTILE"                 = "Unlock validation Worktile";
+"TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON"           = "Touch ID system is not turned on";
+"PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID" = "Please open the system settings for TouchID";

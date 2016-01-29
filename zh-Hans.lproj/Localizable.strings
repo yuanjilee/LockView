@@ -1,0 +1,31 @@
+
+/*
+  Localization.strings
+  LeeLockView
+
+  Created by yuanjilee on 16/1/29.
+  Copyright © 2016年 yuanjilee. All rights reserved.
+*/
+
+
+///-----------------------------------------
+/// @name Pattern Password
+///-----------------------------------------
+
+"GESTURE_LOCK"                               = "手势锁";
+"PATTERN_PASSWORD"                           = "手势密码";
+"FINGERPRINT_UNLOCK"                         = "指纹解锁";
+"RESET_PASSWORD_GESTURE"                     = "重置手势密码";
+"DRAW_GESTURE_PASSWORD"                      = "绘制手势密码";
+"ENTER_THE_GESTURE_PASSWORD"                 = "请输入手势密码";
+"FORGET_PASSWORD"                            = "忘记密码?";
+"RE_LOGIN_IN"                                = "请重新登陆";
+"INCORRECT_PATTERN"                          = "与上次输入不一致，请重新设置.";
+"SET_A_PATTERN_PASSWORD"                     = "创建手势密码";
+"ENTER_AGAIN_FOR_CONFIRAMTION"               = "请再次绘制解锁密码";
+"AT_LAST_4_POINTS_SET_AGAIN"                 = "密码长度不得少于四位.";
+"CREATING_SUCCESS"                           = "创建成功";
+"INCORRECT_PATTERN_CHANCE_LEFT"              = "密码错误.还可以尝试 %d 次";
+"UNLOCK_VALIDATION_WORKTILE"                 = "通过验证指纹解锁 Worktile";
+"TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON"           = "未开启系统Touch ID";
+"PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID" = "请先在系统设置-TouchID与密码中开启";
