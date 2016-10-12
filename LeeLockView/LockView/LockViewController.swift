@@ -113,9 +113,9 @@ extension LockViewController {
     forgetBtn.setTitleColor(kForgetBtnColorNormal, for: UIControlState())
     forgetBtn.titleLabel?.font = UIFont.systemFont(ofSize: kSmallFontSize)
     view.addSubview(forgetBtn)
-    forgetBtn.snp_makeConstraints { (make) -> Void in
-      make.centerX.equalTo(view.snp_centerX)
-      make.bottom.equalTo(view.snp_bottom).offset(-10)
+    forgetBtn.snp.makeConstraints { (make) -> Void in
+      make.centerX.equalTo(view.snp.centerX)
+      make.bottom.equalTo(view.snp.bottom).offset(-10)
     }
     
     let isOpenTouchIDSwitch = LockInfoStorage.getTouchIDState()
@@ -126,20 +126,20 @@ extension LockViewController {
       fingerBtn.setTitleColor(kForgetBtnColorNormal, for: UIControlState())
       fingerBtn.titleLabel?.font = UIFont.systemFont(ofSize: kSmallFontSize)
       view.addSubview(fingerBtn)
-      fingerBtn.snp_makeConstraints { (make) -> Void in
-        make.trailing.equalTo(view.snp_trailing).offset(-20)
-        make.bottom.equalTo(view.snp_bottom).offset(-10)
+      fingerBtn.snp.makeConstraints { (make) -> Void in
+        make.trailing.equalTo(view.snp.trailing).offset(-20)
+        make.bottom.equalTo(view.snp.bottom).offset(-10)
       }
-      //忘记密码位置左移,并移除其上所有约束  或 snp_remakeContraints
+      //忘记密码位置左移,并移除其上所有约束  或 snp.remakeContraints
       forgetBtn.removeConstraints(forgetBtn.constraints)
       for constraints in (forgetBtn.superview?.constraints)! {
         if constraints.firstItem.isEqual(forgetBtn) {
           forgetBtn.superview?.removeConstraint(constraints)
         }
       }
-      forgetBtn.snp_makeConstraints { (make) -> Void in
-        make.leading.equalTo(view.snp_leading).offset(20)
-        make.bottom.equalTo(view.snp_bottom).offset(-10)
+      forgetBtn.snp.makeConstraints { (make) -> Void in
+        make.leading.equalTo(view.snp.leading).offset(20)
+        make.bottom.equalTo(view.snp.bottom).offset(-10)
       }
     }
   }
@@ -160,9 +160,9 @@ extension LockViewController {
       
       view.addSubview(_avatarImageView)
       
-      _avatarImageView.snp_makeConstraints { (make) -> Void in
-        make.top.equalTo(view.snp_top).offset(60)
-        make.centerX.equalTo(view.snp_centerX)
+      _avatarImageView.snp.makeConstraints { (make) -> Void in
+        make.top.equalTo(view.snp.top).offset(60)
+        make.centerX.equalTo(view.snp.centerX)
         make.height.equalTo(70)
         make.width.equalTo(70)
       }
@@ -172,9 +172,9 @@ extension LockViewController {
   fileprivate func _initIndicatorView() {
     indicator = LockIndicatorView()
     view.addSubview(indicator)
-    indicator.snp_makeConstraints { (make) -> Void in
-      make.top.equalTo(view.snp_top).offset(24 + 20 + 64)
-      make.centerX.equalTo(view.snp_centerX).offset(8)
+    indicator.snp.makeConstraints { (make) -> Void in
+      make.top.equalTo(view.snp.top).offset(24 + 20 + 64)
+      make.centerX.equalTo(view.snp.centerX).offset(8)
       make.height.equalTo(50)
       make.width.equalTo(50)
     }
@@ -188,14 +188,14 @@ extension LockViewController {
       _lockTitleLabel?.textAlignment = .center
       _lockTitleLabel?.textColor = kTipColorNormal
       _lockTitleLabel?.font = UIFont.systemFont(ofSize: kNormalFontSize)
-      _lockTitleLabel?.snp_makeConstraints({ (make) -> Void in
-        make.leading.equalTo(view.snp_leading)
-        make.trailing.equalTo(view.snp_trailing)
+      _lockTitleLabel?.snp.makeConstraints({ (make) -> Void in
+        make.leading.equalTo(view.snp.leading)
+        make.trailing.equalTo(view.snp.trailing)
         if lockType == .Verify {
-          make.top.equalTo(_avatarImageView.snp_bottom).offset(20)
+          make.top.equalTo(_avatarImageView.snp.bottom).offset(20)
         }
         else if lockType == .Setting {
-          make.top.equalTo(indicator.snp_bottom).offset(0)
+          make.top.equalTo(indicator.snp.bottom).offset(0)
         }
         make.height.equalTo(20)
       })
@@ -203,10 +203,10 @@ extension LockViewController {
   }
   
   fileprivate func _initLockView() {
-    lock.snp_makeConstraints { (make) -> Void in
-      make.leading.equalTo(view.snp_leading)
-      make.trailing.equalTo(view.snp_trailing)
-      make.top.equalTo(_lockTitleLabel!.snp_bottom)
+    lock.snp.makeConstraints { (make) -> Void in
+      make.leading.equalTo(view.snp.leading)
+      make.trailing.equalTo(view.snp.trailing)
+      make.top.equalTo(_lockTitleLabel!.snp.bottom)
       make.height.equalTo(SCREEN_SIZE.width)
     }
   }
@@ -248,7 +248,7 @@ extension LockViewController {
         //成功提示语
 //        MBProgressHUD.showMessage("设置成功", hideAfterDelay: 1, complete: nil)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1000 * USEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: { () -> Void in
-          self.navigationController?.popViewController(animated: true)
+          _ = self.navigationController?.popViewController(animated: true)
         })
       }
     }
@@ -390,7 +390,7 @@ extension LockViewController {
     if #available(iOS 9.0, *) {
       if  context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authorError) {
         
-        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: NSLocalizedString("UNLOCK_VALIDATION_WORKTILE", comment: ""), reply: { (success: Bool, error: NSError?) -> Void in
+        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: NSLocalizedString("UNLOCK_VALIDATION_WORKTILE", comment: ""), reply: { (success: Bool, error: Error?) -> Void in
           
           if success {
             debugPrint("验证成功 \(success)")
@@ -398,7 +398,7 @@ extension LockViewController {
           }
           else {
             if let error = error {
-              switch error.code {
+              switch error._code {
                 
               case LAError.Code.authenticationFailed.rawValue:
                 debugPrint("Faild")
@@ -424,7 +424,7 @@ extension LockViewController {
               }
             }
           }
-        } as! (Bool, Error?) -> Void)
+        })
       }
       else {
         let unSupportAlert: UIAlertView = UIAlertView(title: NSLocalizedString("TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON", comment: ""), message: NSLocalizedString("PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID", comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
@@ -436,7 +436,7 @@ extension LockViewController {
       // Fallback on earlier versions
       if  context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authorError) {
         
-        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: NSLocalizedString("UNLOCK_VALIDATION_WORKTILE", comment: ""), reply: { (success: Bool, error: NSError?) -> Void in
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: NSLocalizedString("UNLOCK_VALIDATION_WORKTILE", comment: ""), reply: { (success: Bool, error: Error?) -> Void in
           
           if success {
             debugPrint("验证成功 \(success)")
@@ -444,7 +444,7 @@ extension LockViewController {
           }
           else {
             if let error = error {
-              switch error.code {
+              switch error._code {
                 
               case LAError.Code.authenticationFailed.rawValue:
                 debugPrint("Faild")
@@ -467,7 +467,7 @@ extension LockViewController {
               }
             }
           }
-        } as! (Bool, Error?) -> Void)
+        })
       }
       else {
         let unSupportAlert: UIAlertView = UIAlertView(title: NSLocalizedString("TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON", comment: ""), message: NSLocalizedString("PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID", comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))

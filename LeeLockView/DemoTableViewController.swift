@@ -52,7 +52,7 @@ class DemoTableViewController: UITableViewController {
       
       navigationController?.pushViewController(setting, animated: true)
     } else {
-      LockViewController.showSettingLockViewController(self)
+      _ = LockViewController.showSettingLockViewController(self)
     }
     tableView.deselectRow(at: indexPath, animated: true)
 

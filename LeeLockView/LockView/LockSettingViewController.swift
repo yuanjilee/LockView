@@ -180,7 +180,7 @@ extension LockSettingViewController: UITableViewDelegate, UITableViewDataSource 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     if (indexPath as NSIndexPath).section == 1 {
-      LockViewController.showSettingLockViewController(self)
+      _ = LockViewController.showSettingLockViewController(self)
     }
   }
   
