@@ -14,25 +14,25 @@ import Foundation
 //MARK: - UIColor
 
 /// 绘制过程线条颜色
-let kColorLineNormal: UIColor = UIColor.whiteColor()
+let kColorLineNormal: UIColor = UIColor.white
 
 /// 绘制错误线条颜色
 let kColorLineError: UIColor   = UIColor(hexString: "#fdde30")
 
 /// 解锁圆环边框色、实心色以及指示箭头色
-let kColorItemNormal: UIColor = UIColor.whiteColor()
+let kColorItemNormal: UIColor = UIColor.white
 
 /// 解锁圆环边框色、实心色以及指示箭头错误颜色
 let kColorItemError: UIColor = UIColor(hexString: "#fdde30")
 
 /// 提示文字颜色
-let kTipColorNormal: UIColor = UIColor.whiteColor()
+let kTipColorNormal: UIColor = UIColor.white
 
 /// 提示错误问题颜色
 let kTipColorError: UIColor = UIColor(hexString: "#fdde30")
 
 /// 指示图片空心以及实心颜色
-let kColorIndicatorNormal: UIColor = UIColor.whiteColor()
+let kColorIndicatorNormal: UIColor = UIColor.white
 
 /// 忘记密码、指纹锁按钮字体颜色
 let kForgetBtnColorNormal: UIColor  = UIColor(hexString: "##fdde30")

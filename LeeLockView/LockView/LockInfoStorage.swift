@@ -14,33 +14,33 @@ import UIKit
 
 class LockInfoStorage: NSObject {
   
-  private static let kPassCodeKey: String = "LockPassCodeKey"
-  private static let kTouchIDSwitchKey: String = "touchIDSwitchKey"
-  private static let kGestureSwitchKey: String = "gestureSwithKey"
+  fileprivate static let kPassCodeKey: String = "LockPassCodeKey"
+  fileprivate static let kTouchIDSwitchKey: String = "touchIDSwitchKey"
+  fileprivate static let kGestureSwitchKey: String = "gestureSwithKey"
   
   // passcode
   class func setLockInfo(withString str: String) {
-    let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    defaults.setObject(str, forKey: kPassCodeKey)
+    let defaults: UserDefaults = UserDefaults.standard
+    defaults.set(str, forKey: kPassCodeKey)
     defaults.synchronize()
   }
   
   class func getLockInfo() -> String? {
-    let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    let lockInfo: String? =  defaults.objectForKey(kPassCodeKey) as? String
+    let defaults: UserDefaults = UserDefaults.standard
+    let lockInfo: String? =  defaults.object(forKey: kPassCodeKey) as? String
     return lockInfo
   }
   
   // switch
   class func setSwitchState(withBoolValue value: Bool) {
-    let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    defaults.setBool(value, forKey: kGestureSwitchKey)
+    let defaults: UserDefaults = UserDefaults.standard
+    defaults.set(value, forKey: kGestureSwitchKey)
     defaults.synchronize()
   }
 
   class func getSwitchState() -> Bool {
-    let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    let switchState: Bool? = defaults.objectForKey(kGestureSwitchKey) as? Bool
+    let defaults: UserDefaults = UserDefaults.standard
+    let switchState: Bool? = defaults.object(forKey: kGestureSwitchKey) as? Bool
     if let switchState = switchState {
       return switchState
     }
@@ -52,14 +52,14 @@ class LockInfoStorage: NSObject {
   
   // touchID
   class func setTouchIDState(withBoolValue value: Bool) {
-    let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    defaults.setBool(value, forKey: kTouchIDSwitchKey)
+    let defaults: UserDefaults = UserDefaults.standard
+    defaults.set(value, forKey: kTouchIDSwitchKey)
     defaults.synchronize()
   }
 
   class func getTouchIDState() -> Bool {
-    let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    let touchIDState: Bool? = defaults.objectForKey(kTouchIDSwitchKey) as? Bool
+    let defaults: UserDefaults = UserDefaults.standard
+    let touchIDState: Bool? = defaults.object(forKey: kTouchIDSwitchKey) as? Bool
     if let touchIDState = touchIDState {
       return touchIDState
     }
@@ -71,10 +71,10 @@ class LockInfoStorage: NSObject {
   
   //clear
   class func clearAllGestureLockInfo() {
-    let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    defaults.setObject(nil, forKey: kPassCodeKey)
-    defaults.setBool(false, forKey: kTouchIDSwitchKey)
-    defaults.setBool(false, forKey: kGestureSwitchKey)
+    let defaults: UserDefaults = UserDefaults.standard
+    defaults.set(nil, forKey: kPassCodeKey)
+    defaults.set(false, forKey: kTouchIDSwitchKey)
+    defaults.set(false, forKey: kGestureSwitchKey)
   }
 }
 

@@ -23,28 +23,28 @@ class LockIndicatorView: UIView {
   
   //MARK: -  Property
   
-  private var _selectedArray: [Int] = []
+  fileprivate var _selectedArray: [Int] = []
   
   
   //MARK: - Lifecycle
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    self.backgroundColor = UIColor.clearColor()
+    self.backgroundColor = UIColor.clear
   }
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    backgroundColor = UIColor.clearColor()
+    backgroundColor = UIColor.clear
     fatalError("init(coder:) has not been implemented")
   }
 
-  override func drawRect(rect: CGRect) {
-    let ctx: CGContextRef = UIGraphicsGetCurrentContext()!
-    CGContextSetLineWidth(ctx, kLockLineWidth)
+  override func draw(_ rect: CGRect) {
+    let ctx: CGContext = UIGraphicsGetCurrentContext()!
+    ctx.setLineWidth(kLockLineWidth)
     kColorIndicatorNormal.set()
     
-    let pathM: CGMutablePathRef = CGPathCreateMutable()
+    let pathM: CGMutablePath = CGMutablePath()
     let margin: CGFloat = 5.0
     let padding: CGFloat = 1.0
     let rectWH: CGFloat = (bounds.size.width - margin * 2 * 3 - padding * 2)/3
@@ -53,24 +53,26 @@ class LockIndicatorView: UIView {
       let col: Int = i / 3
       let rectX: CGFloat = (rectWH + margin) * CGFloat(row) + padding
       let rectY: CGFloat = (rectWH + margin) * CGFloat(col) + padding
-      let rect: CGRect = CGRectMake(rectX, rectY, rectWH, rectWH)
-      CGPathAddEllipseInRect(pathM, nil, rect)
+      let rect: CGRect = CGRect(x: rectX, y: rectY, width: rectWH, height: rectWH)
+//      CGPathAddEllipseInRect(pathM, nil, rect)
+      pathM.addEllipse(in: rect)
 
       //重画:实心圆
       for j in 0 ..< _selectedArray.count {
         if i == _selectedArray[j] {
-          let circlePath: CGMutablePathRef = CGPathCreateMutable()
-          CGPathAddEllipseInRect(circlePath, nil, rect)
-          CGContextAddPath(ctx, circlePath)
-          CGContextFillPath(ctx)
+          let circlePath: CGMutablePath = CGMutablePath()
+//          CGPathAddEllipseInRect(circlePath, nil, rect)
+          circlePath.addEllipse(in: rect)
+          ctx.addPath(circlePath)
+          ctx.fillPath()
         }
       }
     }
     
-    CGContextAddPath(ctx, pathM)
-    CGContextStrokePath(ctx)
+    ctx.addPath(pathM)
+    ctx.strokePath()
     
-    debugPrint("\(NSDate().timeIntervalSinceNow)")
+    debugPrint("\(Date().timeIntervalSinceNow)")
 
   }
   
@@ -78,7 +80,7 @@ class LockIndicatorView: UIView {
 
 extension LockIndicatorView {
   
-  func setSelectedArray(selectArray: [Int]) {
+  func setSelectedArray(_ selectArray: [Int]) {
     debugPrint("selectedArray = \(selectArray)")
     _selectedArray = selectArray
     self.setNeedsDisplay()
@@ -87,18 +89,19 @@ extension LockIndicatorView {
 
 extension LockIndicatorView {
   
-  private func circleSelected(ctx: CGContextRef, rect: CGRect) {
-    let circlePath: CGMutablePathRef = CGPathCreateMutable()
-    CGPathAddEllipseInRect(circlePath, nil, self.getselectedRect())
-    CGContextAddPath(ctx, circlePath)
-    CGContextFillPath(ctx)
+  fileprivate func circleSelected(_ ctx: CGContext, rect: CGRect) {
+    let circlePath: CGMutablePath = CGMutablePath()
+//    CGPathAddEllipseInRect(circlePath, nil, self.getselectedRect())
+    circlePath.addEllipse(in: self.getselectedRect())
+    ctx.addPath(circlePath)
+    ctx.fillPath()
   }
   
-  private func getselectedRect() -> CGRect {
+  fileprivate func getselectedRect() -> CGRect {
       let rect: CGRect = self.bounds
       let selectRectWH: CGFloat = rect.size.width * CoreLockArcWHR
       let selectRectXY: CGFloat = rect.size.width * (1 - CoreLockArcWHR) * 0.5
-      let _selectedRect = CGRectMake(selectRectXY, selectRectXY, selectRectWH, selectRectWH)
+      let _selectedRect = CGRect(x: selectRectXY, y: selectRectXY, width: selectRectWH, height: selectRectWH)
     return _selectedRect
   }
   

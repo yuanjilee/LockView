@@ -16,23 +16,23 @@ class LockItemView: UIView {
 
   enum LockItemViewDirect: Int {
     
-    case Never = 0
+    case never = 0
     
-    case Top
+    case top
     
-    case RightTop
+    case rightTop
     
-    case Right
+    case right
     
-    case RightBottom
+    case rightBottom
     
-    case Bottom
+    case bottom
     
-    case LeftBottom
+    case leftBottom
     
-    case Left
+    case left
     
-    case LeftTop
+    case leftTop
     
   }
   
@@ -61,25 +61,25 @@ class LockItemView: UIView {
     }
   }
 
-  private var _calRect: CGRect = CGRectZero
-  private var _angle: Double = 0
-  private var _selectedRect: CGRect = CGRectZero
+  fileprivate var _calRect: CGRect = CGRect.zero
+  fileprivate var _angle: Double = 0
+  fileprivate var _selectedRect: CGRect = CGRect.zero
 
   //MARK: - LifeCycle
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    backgroundColor = UIColor.clearColor()
+    backgroundColor = UIColor.clear
   }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    backgroundColor = UIColor.clearColor()
+    backgroundColor = UIColor.clear
     fatalError("init(coder:) has not been implemented")
   }
   
-  override func drawRect(rect: CGRect) {
-    let ctx:CGContextRef = UIGraphicsGetCurrentContext()!
+  override func draw(_ rect: CGRect) {
+    let ctx:CGContext = UIGraphicsGetCurrentContext()!
     _transFormCtx(ctx, rect: rect)
     _propertySetting(ctx)
     _circleNormal(ctx, rect: rect)
@@ -93,83 +93,88 @@ class LockItemView: UIView {
 
 extension LockItemView {
   
-  private func _transFormCtx(ctx: CGContextRef, rect: CGRect){
+  fileprivate func _transFormCtx(_ ctx: CGContext, rect: CGRect){
     
     if direct == nil {return}
-    if direct == .Never {return}
+    if direct == .never {return}
     
     let translateXY = rect.size.width * 0.5;
-    CGContextTranslateCTM(ctx, translateXY, translateXY)
-    CGContextRotateCTM(ctx, CGFloat(_angle))
-    CGContextTranslateCTM(ctx, -translateXY, -translateXY)
+    ctx.translateBy(x: translateXY, y: translateXY)
+    ctx.rotate(by: CGFloat(_angle))
+    ctx.translateBy(x: -translateXY, y: -translateXY)
   }
   
-  private func _directFlag(ctx: CGContextRef, rect: CGRect) {
+  fileprivate func _directFlag(_ ctx: CGContext, rect: CGRect) {
     
     //初始化为空,直接return
     if direct == nil {return}
     //手势结束时,重置为.Never,直接返回
-    if direct == .Never {return}
+    if direct == .never {return}
     debugPrint("------------->directe =  \(direct)    and raw = \(direct.rawValue)")
     
-    let trianglePathM: CGMutablePathRef = CGPathCreateMutable()
+    let trianglePathM: CGMutablePath = CGMutablePath()
     let marginSelectedCirclev: CGFloat = 4.0
     let selectedRect: CGRect = self.getselectedRect()
     let w: CGFloat = 8.0
     let h: CGFloat = 5.0
     let topX: CGFloat = rect.origin.x + rect.size.width * 0.5
     let topY: CGFloat = rect.origin.y + (rect.size.width * 0.5 - h - marginSelectedCirclev - selectedRect.size.height * 0.5)
-    CGPathMoveToPoint(trianglePathM, nil, topX, topY)
+//    CGPathMoveToPoint(trianglePathM, nil, topX, topY)
+    trianglePathM.move(to: CGPoint(x: topX, y: topY))
     
     let leftPointX: CGFloat = topX - w * 0.5
     let leftPointY = topY + h
-    CGPathAddLineToPoint(trianglePathM, nil, leftPointX, leftPointY)
+//    CGPathAddLineToPoint(trianglePathM, nil, leftPointX, leftPointY)
+    trianglePathM.addLine(to: CGPoint(x: leftPointX, y: leftPointY))
     
     let rightPointX: CGFloat = topX + w * 0.5
-    CGPathAddLineToPoint(trianglePathM, nil, rightPointX, leftPointY)
+//    CGPathAddLineToPoint(trianglePathM, nil, rightPointX, leftPointY)
+    trianglePathM.addLine(to: CGPoint(x: rightPointX, y: leftPointY))
     
-    CGContextAddPath(ctx, trianglePathM)
-    CGContextFillPath(ctx)
+    ctx.addPath(trianglePathM)
+    ctx.fillPath()
   }
   
-  private func _propertySetting(ctx: CGContextRef) {
-    CGContextSetLineWidth(ctx, CoreLockArcLineW)
+  fileprivate func _propertySetting(_ ctx: CGContext) {
+    ctx.setLineWidth(CoreLockArcLineW)
     (isDefaultColor ? kColorItemError : kColorItemNormal).set()
   }
   
-  private func _circleNormal(ctx: CGContextRef, rect: CGRect) {
-    let loopPath: CGMutablePathRef = CGPathCreateMutable()
+  fileprivate func _circleNormal(_ ctx: CGContext, rect: CGRect) {
+    let loopPath: CGMutablePath = CGMutablePath()
     let calRect: CGRect = self.getcalRect()
-    CGPathAddEllipseInRect(loopPath, nil, calRect)
-    CGContextAddPath(ctx, loopPath)
-    CGContextStrokePath(ctx)
+//    CGPathAddEllipseInRect(loopPath, nil, calRect)
+    loopPath.addEllipse(in: calRect)
+    ctx.addPath(loopPath)
+    ctx.strokePath()
   }
 
-  private func _circleSelected(ctx: CGContextRef, rect: CGRect) {
-    let circlePath: CGMutablePathRef = CGPathCreateMutable()
-    CGPathAddEllipseInRect(circlePath, nil, self.getselectedRect())
-    CGContextAddPath(ctx, circlePath)
-    CGContextFillPath(ctx)
+  fileprivate func _circleSelected(_ ctx: CGContext, rect: CGRect) {
+    let circlePath: CGMutablePath = CGMutablePath()
+//    CGPathAddEllipseInRect(circlePath, nil, self.getselectedRect())
+    circlePath.addEllipse(in: self.getselectedRect())
+    ctx.addPath(circlePath)
+    ctx.fillPath()
   }
   
   //MARK: - Getter
   
-  private func getcalRect() -> CGRect {
-    if CGRectEqualToRect(_calRect, CGRectZero) {
+  fileprivate func getcalRect() -> CGRect {
+    if _calRect.equalTo(CGRect.zero) {
       let lineW: CGFloat = CoreLockArcLineW
       let sizeWH: CGFloat = bounds.size.width - lineW
       let orginXY = lineW * 0.5
-      _calRect = CGRectMake(orginXY, orginXY, sizeWH, sizeWH)
+      _calRect = CGRect(x: orginXY, y: orginXY, width: sizeWH, height: sizeWH)
     }
     return _calRect
   }
   
-  private func getselectedRect() -> CGRect {
-    if CGRectEqualToRect(_selectedRect, CGRectZero) {
+  fileprivate func getselectedRect() -> CGRect {
+    if _selectedRect.equalTo(CGRect.zero) {
       let rect: CGRect = self.bounds
       let selectRectWH: CGFloat = rect.size.width * CoreLockArcWHR
       let selectRectXY: CGFloat = rect.size.width * (1 - CoreLockArcWHR) * 0.5
-      _selectedRect = CGRectMake(selectRectXY, selectRectXY, selectRectWH, selectRectWH)
+      _selectedRect = CGRect(x: selectRectXY, y: selectRectXY, width: selectRectWH, height: selectRectWH)
     }
     return _selectedRect
   }

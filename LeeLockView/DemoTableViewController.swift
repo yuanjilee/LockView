@@ -22,29 +22,29 @@ class DemoTableViewController: UITableViewController {
 
     
     navigationController?.navigationBar.barTintColor = UIColor(hexRGB: 0x3c3d47)
-    navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    navigationController?.navigationBar.tintColor = UIColor.white
+    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     
     navigationItem.title = "手势锁"
     
 
     
-    navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarPosition: .Any, barMetrics: .Default)
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     
     let backButtonImage: UIImage = UIImage(named: "navigation_back")!
-    navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    navigationController?.navigationBar.tintColor = UIColor.white
     navigationController?.navigationBar.backIndicatorImage = backButtonImage
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
-    navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+    navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     
-    navigationController?.navigationBar.translucent = false
+    navigationController?.navigationBar.isTranslucent = false
   }
   
   
   //MARK: - UITableViewDelegate
   
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     let isOpen: String? = LockInfoStorage.getLockInfo()
     if let _ = isOpen {
@@ -54,7 +54,7 @@ class DemoTableViewController: UITableViewController {
     } else {
       LockViewController.showSettingLockViewController(self)
     }
-    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    tableView.deselectRow(at: indexPath, animated: true)
 
   }
   

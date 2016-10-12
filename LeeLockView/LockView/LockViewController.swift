@@ -29,7 +29,7 @@ class LockViewController: UIViewController {
   
   var lock: LockView!
   var indicator: LockIndicatorView!
-  let SCREEN_SIZE: CGSize = UIScreen.mainScreen().bounds.size
+  let SCREEN_SIZE: CGSize = UIScreen.main.bounds.size
   let kpassCodeAttemptAmount: Int = 4
   let LCK_DEFAULT_CORNER_RADIUS = 5.0
   
@@ -37,17 +37,17 @@ class LockViewController: UIViewController {
   //MARK: - Property
   
   var lockType: LockType = .Setting
-  private var _lockTitleLabel: UILabel?
-  private var _avatarImageView: UIImageView!
+  fileprivate var _lockTitleLabel: UILabel?
+  fileprivate var _avatarImageView: UIImageView!
   //三步提示
-  private var _tip1: String = ""
-  private var _tip2: String = ""
-  private var _tip3: String = ""
+  fileprivate var _tip1: String = ""
+  fileprivate var _tip2: String = ""
+  fileprivate var _tip3: String = ""
   //密码
-  private var _passcodefirst: String = ""
-  private var _passcodeConfirm: String = ""
-  private var _passcodeSaved: String = ""
-  private var _passcodeAttemtCount: Int = 0
+  fileprivate var _passcodefirst: String = ""
+  fileprivate var _passcodeConfirm: String = ""
+  fileprivate var _passcodeSaved: String = ""
+  fileprivate var _passcodeAttemtCount: Int = 0
   
   
   //MARK: - Lifecycle
@@ -66,22 +66,22 @@ class LockViewController: UIViewController {
     }
   }
   
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    navigationController?.navigationBar.translucent = true
+    navigationController?.navigationBar.isTranslucent = true
   }
   
-  override func viewWillDisappear(animated: Bool) {
+  override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     
-    navigationController?.navigationBar.translucent = false
+    navigationController?.navigationBar.isTranslucent = false
   }
 }
 
 extension LockViewController {
   
-  private func _prepare() {
+  fileprivate func _prepare() {
     lock = LockView()
     lock.delegate = self
     view.addSubview(lock)
@@ -106,12 +106,12 @@ extension LockViewController {
     _initLockView()
   }
   
-  private func _initView() {
-    let forgetBtn: UIButton = UIButton(type: .Custom)
-    forgetBtn.addTarget(self, action: "_forgetBtnClick", forControlEvents: .TouchUpInside)
-    forgetBtn.setTitle(NSLocalizedString("FORGET_PASSWORD", comment: ""), forState: .Normal)
-    forgetBtn.setTitleColor(kForgetBtnColorNormal, forState: .Normal)
-    forgetBtn.titleLabel?.font = UIFont.systemFontOfSize(kSmallFontSize)
+  fileprivate func _initView() {
+    let forgetBtn: UIButton = UIButton(type: .custom)
+    forgetBtn.addTarget(self, action: #selector(LockViewController._forgetBtnClick), for: .touchUpInside)
+    forgetBtn.setTitle(NSLocalizedString("FORGET_PASSWORD", comment: ""), for: UIControlState())
+    forgetBtn.setTitleColor(kForgetBtnColorNormal, for: UIControlState())
+    forgetBtn.titleLabel?.font = UIFont.systemFont(ofSize: kSmallFontSize)
     view.addSubview(forgetBtn)
     forgetBtn.snp_makeConstraints { (make) -> Void in
       make.centerX.equalTo(view.snp_centerX)
@@ -120,11 +120,11 @@ extension LockViewController {
     
     let isOpenTouchIDSwitch = LockInfoStorage.getTouchIDState()
     if isOpenTouchIDSwitch {
-      let fingerBtn: UIButton = UIButton(type: .Custom)
-      fingerBtn.addTarget(self, action: "_touchID", forControlEvents: .TouchUpInside)
-      fingerBtn.setTitle(NSLocalizedString("FINGERPRINT_UNLOCK", comment: ""), forState: .Normal)
-      fingerBtn.setTitleColor(kForgetBtnColorNormal, forState: .Normal)
-      fingerBtn.titleLabel?.font = UIFont.systemFontOfSize(kSmallFontSize)
+      let fingerBtn: UIButton = UIButton(type: .custom)
+      fingerBtn.addTarget(self, action: #selector(LockViewController._touchID), for: .touchUpInside)
+      fingerBtn.setTitle(NSLocalizedString("FINGERPRINT_UNLOCK", comment: ""), for: UIControlState())
+      fingerBtn.setTitleColor(kForgetBtnColorNormal, for: UIControlState())
+      fingerBtn.titleLabel?.font = UIFont.systemFont(ofSize: kSmallFontSize)
       view.addSubview(fingerBtn)
       fingerBtn.snp_makeConstraints { (make) -> Void in
         make.trailing.equalTo(view.snp_trailing).offset(-20)
@@ -145,7 +145,7 @@ extension LockViewController {
   }
   
   
-  private func _initAvatarImageView() {
+  fileprivate func _initAvatarImageView() {
     
     if lockType == .Verify {
       _avatarImageView = UIImageView()
@@ -169,7 +169,7 @@ extension LockViewController {
     }
   }
   
-  private func _initIndicatorView() {
+  fileprivate func _initIndicatorView() {
     indicator = LockIndicatorView()
     view.addSubview(indicator)
     indicator.snp_makeConstraints { (make) -> Void in
@@ -180,15 +180,15 @@ extension LockViewController {
     }
   }
   
-  private func _initLockTitleLabel() {
+  fileprivate func _initLockTitleLabel() {
     if let _ = _lockTitleLabel {return}
     else {
       _lockTitleLabel = UILabel()
       view.addSubview(_lockTitleLabel!)
-      _lockTitleLabel?.textAlignment = .Center
+      _lockTitleLabel?.textAlignment = .center
       _lockTitleLabel?.textColor = kTipColorNormal
-      _lockTitleLabel?.font = UIFont.systemFontOfSize(kNormalFontSize)
-      _lockTitleLabel?.snp_makeConstraints(closure: { (make) -> Void in
+      _lockTitleLabel?.font = UIFont.systemFont(ofSize: kNormalFontSize)
+      _lockTitleLabel?.snp_makeConstraints({ (make) -> Void in
         make.leading.equalTo(view.snp_leading)
         make.trailing.equalTo(view.snp_trailing)
         if lockType == .Verify {
@@ -202,7 +202,7 @@ extension LockViewController {
     }
   }
   
-  private func _initLockView() {
+  fileprivate func _initLockView() {
     lock.snp_makeConstraints { (make) -> Void in
       make.leading.equalTo(view.snp_leading)
       make.trailing.equalTo(view.snp_trailing)
@@ -212,7 +212,7 @@ extension LockViewController {
   }
   
   //创建密码
-  private func _creatPasscode(passcode: String) {
+  fileprivate func _creatPasscode(_ passcode: String) {
     
     if _passcodefirst == "" && _passcodeConfirm == ""{
       _passcodefirst = passcode
@@ -239,7 +239,7 @@ extension LockViewController {
         if lockInfo == nil {
           let setting:UIViewController = LockSettingViewController()
           let count = navigationController?.viewControllers.count
-          navigationController?.viewControllers.insert(setting, atIndex: count!-1)
+          navigationController?.viewControllers.insert(setting, at: count!-1)
         }
         
         LockInfoStorage.setLockInfo(withString: _passcodefirst)
@@ -247,22 +247,22 @@ extension LockViewController {
         lock.showDismissLockView()
         //成功提示语
 //        MBProgressHUD.showMessage("设置成功", hideAfterDelay: 1, complete: nil)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1000 * USEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
-          self.navigationController?.popViewControllerAnimated(true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1000 * USEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: { () -> Void in
+          self.navigationController?.popViewController(animated: true)
         })
       }
     }
   }
   
   //验证密码
-  private func _verifyPassCode(passcode: String) {
+  fileprivate func _verifyPassCode(_ passcode: String) {
     let storageCode = LockInfoStorage.getLockInfo()
     if passcode == storageCode {
-      dismissViewControllerAnimated(true, completion: nil)
+      dismiss(animated: true, completion: nil)
     }
     else {
       if _passcodeAttemtCount <= 0 { // 连续输错五次密码
-        dismissViewControllerAnimated(true) { () -> Void in
+        dismiss(animated: true) { () -> Void in
           //清空手势数据
           LockInfoStorage.clearAllGestureLockInfo()
         }
@@ -270,18 +270,18 @@ extension LockViewController {
 //        _logout()
       }
       else {
-        _passcodeAttemtCount--
+        _passcodeAttemtCount -= 1
         _setErrorTip(_tip2)
       }
     }
   }
   
-  private func _setTip(tip: String) {
+  fileprivate func _setTip(_ tip: String) {
     _lockTitleLabel?.text = tip
     _lockTitleLabel?.textColor = kTipColorNormal
   }
   
-  private func _setErrorTip(tip: String) {
+  fileprivate func _setErrorTip(_ tip: String) {
     //图形错误
     lock.showErrorLockView()
     //错误标签
@@ -290,14 +290,14 @@ extension LockViewController {
     _shake()
   }
   
-  private func _shake() {
+  fileprivate func _shake() {
     let caAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
     let offset: CGFloat = 15
     caAnimation.values = [(-offset),(0),(offset),(0),(-offset),(0),(offset),(0)]
     caAnimation.duration = 0.2
     caAnimation.repeatCount = 2
-    caAnimation.removedOnCompletion = true
-    _lockTitleLabel?.layer.addAnimation(caAnimation, forKey: "shake")
+    caAnimation.isRemovedOnCompletion = true
+    _lockTitleLabel?.layer.add(caAnimation, forKey: "shake")
   }
   
 }
@@ -306,7 +306,7 @@ extension LockViewController: LockViewDelegate {
   
   //MARK: - LockViewDelegate
   
-  func lockViewDelegate(lockView: LockView, passCode: String, selectedArray: [Int]) {
+  func lockViewDelegate(_ lockView: LockView, passCode: String, selectedArray: [Int]) {
 
     let passcode = passCode
     debugPrint("passcode = \(passcode)")
@@ -349,7 +349,7 @@ extension LockViewController {
   
   //MARK: - LockType
   
-  class func showSettingLockViewController(aboveViewController: UIViewController) -> LockViewController {
+  class func showSettingLockViewController(_ aboveViewController: UIViewController) -> LockViewController {
     let lockVC: LockViewController = LockViewController()
     lockVC.navigationItem.title = NSLocalizedString("PATTERN_PASSWORD", comment: "");
     lockVC.lockType = .Setting
@@ -358,20 +358,20 @@ extension LockViewController {
     return lockVC
   }
   
-  class func showVerifyLockViewController(aboveViewController: UIViewController) -> LockViewController {
+  class func showVerifyLockViewController(_ aboveViewController: UIViewController) -> LockViewController {
     let lockVC: LockViewController = LockViewController()
-    lockVC.navigationController?.navigationBarHidden = true
+    lockVC.navigationController?.isNavigationBarHidden = true
     lockVC.lockType = .Verify
     lockVC._passcodeAttemtCount = lockVC.kpassCodeAttemptAmount
-    aboveViewController.presentViewController(lockVC, animated: false, completion: nil)
+    aboveViewController.present(lockVC, animated: false, completion: nil)
     return lockVC
   }
 }
 
 extension LockViewController {
   
-  @objc private func _forgetBtnClick() {
-    dismissViewControllerAnimated(true) { () -> Void in
+  @objc fileprivate func _forgetBtnClick() {
+    dismiss(animated: true) { () -> Void in
       //清空手势数据
       LockInfoStorage.clearAllGestureLockInfo()
     }
@@ -382,40 +382,40 @@ extension LockViewController {
   //MARK: - TouchID
   
   @available(iOS 8.0, *)
-   @objc private func _touchID() {
+   @objc fileprivate func _touchID() {
     let context: LAContext = LAContext()
     var authorError: NSError?
     context.localizedFallbackTitle = ""
     
     if #available(iOS 9.0, *) {
-      if  context.canEvaluatePolicy(.DeviceOwnerAuthentication, error: &authorError) {
+      if  context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authorError) {
         
-        context.evaluatePolicy(.DeviceOwnerAuthentication, localizedReason: NSLocalizedString("UNLOCK_VALIDATION_WORKTILE", comment: ""), reply: { (success: Bool, error: NSError?) -> Void in
+        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: NSLocalizedString("UNLOCK_VALIDATION_WORKTILE", comment: ""), reply: { (success: Bool, error: NSError?) -> Void in
           
           if success {
             debugPrint("验证成功 \(success)")
-            self.dismissViewControllerAnimated(false, completion: nil)
+            self.dismiss(animated: false, completion: nil)
           }
           else {
             if let error = error {
               switch error.code {
                 
-              case LAError.AuthenticationFailed.rawValue:
+              case LAError.Code.authenticationFailed.rawValue:
                 debugPrint("Faild")
                 
-              case LAError.UserCancel.rawValue:
+              case LAError.Code.userCancel.rawValue:
                 debugPrint("User cancel")
                 
-              case LAError.SystemCancel.rawValue:
+              case LAError.Code.systemCancel.rawValue:
                 debugPrint("System cancel")
                 
-              case LAError.TouchIDLockout.rawValue:
+              case LAError.Code.touchIDLockout.rawValue:
                 debugPrint("Lock out")
                 
-              case LAError.TouchIDNotAvailable.rawValue:
+              case LAError.Code.touchIDNotAvailable.rawValue:
                 debugPrint("Not avaliable")
                 
-              case LAError.UserFallback.rawValue:
+              case LAError.Code.userFallback.rawValue:
                 debugPrint("Fallback")
                 
               default:
@@ -424,7 +424,7 @@ extension LockViewController {
               }
             }
           }
-        })
+        } as! (Bool, Error?) -> Void)
       }
       else {
         let unSupportAlert: UIAlertView = UIAlertView(title: NSLocalizedString("TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON", comment: ""), message: NSLocalizedString("PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID", comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
@@ -434,31 +434,31 @@ extension LockViewController {
     }
     else {
       // Fallback on earlier versions
-      if  context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &authorError) {
+      if  context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authorError) {
         
-        context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: NSLocalizedString("UNLOCK_VALIDATION_WORKTILE", comment: ""), reply: { (success: Bool, error: NSError?) -> Void in
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: NSLocalizedString("UNLOCK_VALIDATION_WORKTILE", comment: ""), reply: { (success: Bool, error: NSError?) -> Void in
           
           if success {
             debugPrint("验证成功 \(success)")
-            self.dismissViewControllerAnimated(false, completion: nil)
+            self.dismiss(animated: false, completion: nil)
           }
           else {
             if let error = error {
               switch error.code {
                 
-              case LAError.AuthenticationFailed.rawValue:
+              case LAError.Code.authenticationFailed.rawValue:
                 debugPrint("Faild")
                 
-              case LAError.UserCancel.rawValue:
+              case LAError.Code.userCancel.rawValue:
                 debugPrint("User cancel")
                 
-              case LAError.SystemCancel.rawValue:
+              case LAError.Code.systemCancel.rawValue:
                 debugPrint("System cancel")
                 
-              case LAError.TouchIDNotAvailable.rawValue:
+              case LAError.Code.touchIDNotAvailable.rawValue:
                 debugPrint("Not avaliable")
                 
-              case LAError.UserFallback.rawValue:
+              case LAError.Code.userFallback.rawValue:
                 debugPrint("Fallback")
                 
               default:
@@ -467,7 +467,7 @@ extension LockViewController {
               }
             }
           }
-        })
+        } as! (Bool, Error?) -> Void)
       }
       else {
         let unSupportAlert: UIAlertView = UIAlertView(title: NSLocalizedString("TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON", comment: ""), message: NSLocalizedString("PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID", comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
@@ -480,7 +480,7 @@ extension LockViewController {
   
   //MARK: - Apperance
   
-  private func _setupApperance() {
+  fileprivate func _setupApperance() {
     view.backgroundColor = UIColor(hexString: "#D13635")
     
   }

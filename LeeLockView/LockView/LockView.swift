@@ -11,91 +11,114 @@
 */
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class LockView: UIView {
 
   //MARK: - commons
   
-  let marginValue: CGFloat   = 35 * (UIScreen.mainScreen().bounds.size.width / 320.0)
-  private var _isColorDefault: Bool   = false
-  private var _dalaytimeMsecond: Int = 100
+  let marginValue: CGFloat   = 35 * (UIScreen.main.bounds.size.width / 320.0)
+  fileprivate var _isColorDefault: Bool   = false
+  fileprivate var _dalaytimeMsecond: Int = 100
   
   
   //MARK: - Property
   
   weak var delegate: LockViewDelegate?
-  private var _itemViewsM: [LockItemView] = []
-  private var _nowPoint:   CGPoint = CGPointZero
-  private var _itemView: LockItemView!
+  fileprivate var _itemViewsM: [LockItemView] = []
+  fileprivate var _nowPoint:   CGPoint = CGPoint.zero
+  fileprivate var _itemView: LockItemView!
   
   
   //MARK: - Lifecycle
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    backgroundColor = UIColor.clearColor()
+    backgroundColor = UIColor.clear
     _prepare()
-    debugPrint("marginValue =  \(marginValue), \(UIScreen.mainScreen().bounds.size.width)")
+    debugPrint("marginValue =  \(marginValue), \(UIScreen.main.bounds.size.width)")
   }
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    backgroundColor = UIColor.clearColor()
+    backgroundColor = UIColor.clear
     _prepare()
     fatalError("init(coder:) has not been implemented")
   }
   
-  override func drawRect(rect: CGRect) {
+  override func draw(_ rect: CGRect) {
     if _itemViewsM.count == 0 {return}
     
-    let ctx: CGContextRef = UIGraphicsGetCurrentContext()!
-    CGContextAddRect(ctx, rect)
+    let ctx: CGContext = UIGraphicsGetCurrentContext()!
+    ctx.addRect(rect)
     
-    for(_,itemView) in _itemViewsM.enumerate() {
-      CGContextAddEllipseInRect(ctx, itemView.frame)
+    for(_,itemView) in _itemViewsM.enumerated() {
+      ctx.addEllipse(in: itemView.frame)
     }
-    CGContextEOClip(ctx)
-    let pathM: CGMutablePathRef = CGPathCreateMutable()
+//    CGContextEOClip(ctx)
+    ctx.clip()
+    let pathM: CGMutablePath = CGMutablePath()
     
     //线条颜色
     (_isColorDefault ? kColorLineError : kColorLineNormal).set()
-    CGContextSetLineCap(ctx, .Round)
-    CGContextSetLineJoin(ctx, .Round)
+    ctx.setLineCap(.round)
+    ctx.setLineJoin(.round)
     
     //线条宽度
-    CGContextSetLineWidth(ctx, 4.0)
+    ctx.setLineWidth(4.0)
     
-    for(index,itemView) in _itemViewsM.enumerate() {
+    for(index,itemView) in _itemViewsM.enumerated() {
       let directPoint: CGPoint = itemView.center
       if index == 0 {
-        CGPathMoveToPoint(pathM, nil, directPoint.x, directPoint.y)
+//        CGPathMoveToPoint(pathM, nil, directPoint.x, directPoint.y)
+        pathM.move(to: CGPoint(x: directPoint.x, y: directPoint.y))
       } else {
-        CGPathAddLineToPoint(pathM, nil, directPoint.x, directPoint.y)
+//        CGPathAddLineToPoint(pathM, nil, directPoint.x, directPoint.y)
+        pathM.addLine(to: CGPoint(x: directPoint.x, y: directPoint.y))
       }
     }
     
     let lastView: LockItemView = _itemViewsM.last!
-    CGContextMoveToPoint(ctx, lastView.center.x, lastView.center.y)
-    CGContextAddLineToPoint(ctx, _nowPoint.x, _nowPoint.y)
+    ctx.move(to: CGPoint(x: lastView.center.x, y: lastView.center.y))
+    ctx.addLine(to: CGPoint(x: _nowPoint.x, y: _nowPoint.y))
     
-    CGContextAddPath(ctx, pathM)
-    CGContextStrokePath(ctx)
+    ctx.addPath(pathM)
+    ctx.strokePath()
   }
   
   override func layoutSubviews() {
     super.layoutSubviews()
     
-    if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+    if UIDevice.current.userInterfaceIdiom == .pad {
       let itemViewWH: CGFloat = 60
       let padding: CGFloat = 50
       let marginx: CGFloat = (bounds.size.width - itemViewWH * 3 - padding * 2) / 2.0
       let marginy: CGFloat = 45
-      for(index,subview) in subviews.enumerate() {
+      for(index,subview) in subviews.enumerated() {
         let row: Int = index % 3
         let col: Int = index / 3
         let x: CGFloat = marginx  + (itemViewWH + padding) * CGFloat(row)
         let y: CGFloat = marginy  + (itemViewWH + padding) * CGFloat (col)
-        let frame: CGRect = CGRectMake(x, y, itemViewWH, itemViewWH)
+        let frame: CGRect = CGRect(x: x, y: y, width: itemViewWH, height: itemViewWH)
         subview.tag = index
         subview.frame = frame
         debugPrint("yyyyyyyy === \(itemViewWH, x, y, marginx, marginy, bounds.size)")
@@ -103,12 +126,12 @@ class LockView: UIView {
     }
     else {
       let itemViewWH: CGFloat = (frame.size.width - 4 * marginValue) / 3.0
-      for(index,subview) in subviews.enumerate() {
+      for(index,subview) in subviews.enumerated() {
         let row: Int = index % 3
         let col: Int = index / 3
         let x: CGFloat = marginValue * CGFloat(row + 1) + CGFloat(row) * itemViewWH
         let y: CGFloat = marginValue * CGFloat(col + 1) + CGFloat(col) * itemViewWH
-        let frame: CGRect = CGRectMake(x, y, itemViewWH, itemViewWH)
+        let frame: CGRect = CGRect(x: x, y: y, width: itemViewWH, height: itemViewWH)
         subview.tag = index
         subview.frame = frame
       }
@@ -118,16 +141,16 @@ class LockView: UIView {
 }
 
 extension LockView {
-  private func _prepare() {
-    for (var i = 0; i < 9; i++) {
+  fileprivate func _prepare() {
+    for _ in 0 ..< 9 {
       _itemView = LockItemView()
       addSubview(_itemView)
     }
   }
   
-  private func _lockHandle(touches: NSSet) {
+  fileprivate func _lockHandle(_ touches: NSSet) {
     let touch: UITouch = touches.anyObject() as! UITouch
-    let loc: CGPoint = touch.locationInView(self)
+    let loc: CGPoint = touch.location(in: self)
     _nowPoint = loc
     let itemView = _itemVIewWithTouchLocation(loc)
     if itemView == nil {return}
@@ -139,17 +162,17 @@ extension LockView {
     }
   }
   
-  private func _itemVIewWithTouchLocation(loc: CGPoint) -> LockItemView? {
+  fileprivate func _itemVIewWithTouchLocation(_ loc: CGPoint) -> LockItemView? {
     var itemView: LockItemView!
     for itemViewSub in subviews {
-      if !CGRectContainsPoint(itemViewSub.frame, loc) {continue}
+      if !itemViewSub.frame.contains(loc) {continue}
       itemView = itemViewSub as? LockItemView
       break
     }
       return itemView
   }
   
-  private func _calDirect() {
+  fileprivate func _calDirect() {
     let count: Int = _itemViewsM.count
     if count <= 1 {return}
     let last_1_itemView = _itemViewsM.last
@@ -161,80 +184,80 @@ extension LockView {
     let last_2_y = last_2_itemView.frame.origin.y
     
     if(last_2_x == last_1_x && last_2_y > last_1_y) {
-      last_2_itemView.direct = .Top;
+      last_2_itemView.direct = .top;
     }
     
     //正左
     if(last_2_y == last_1_y && last_2_x > last_1_x) {
-      last_2_itemView.direct = .Left;
+      last_2_itemView.direct = .left;
     }
     
     //正下
     if(last_2_x == last_1_x && last_2_y < last_1_y) {
-      last_2_itemView.direct = .Bottom;
+      last_2_itemView.direct = .bottom;
     }
     
     //正右
     if(last_2_y == last_1_y && last_2_x < last_1_x) {
-      last_2_itemView.direct = .Right;
+      last_2_itemView.direct = .right;
     }
     
     //左上
     if(last_2_x > last_1_x && last_2_y > last_1_y) {
-      last_2_itemView.direct = .LeftTop;
+      last_2_itemView.direct = .leftTop;
     }
     
     //右上
     if(last_2_x < last_1_x && last_2_y > last_1_y) {
-      last_2_itemView.direct = .RightTop;
+      last_2_itemView.direct = .rightTop;
     }
     
     //左下
     if(last_2_x > last_1_x && last_2_y < last_1_y) {
-      last_2_itemView.direct = .LeftBottom;
+      last_2_itemView.direct = .leftBottom;
     }
     
     //右下
     if(last_2_x < last_1_x && last_2_y < last_1_y) {
-      last_2_itemView.direct = .RightBottom;
+      last_2_itemView.direct = .rightBottom;
     }
   }
   
-  private func _gestureEnd() {
-    userInteractionEnabled = false
+  fileprivate func _gestureEnd() {
+    isUserInteractionEnabled = false
     
     //生成密码串
     var passCode: String = ""
     var passcodeArray:[Int] = []
-    for (var i = 0; i < _itemViewsM.count; i++) {
+    for i in 0 ..< _itemViewsM.count {
       let selectedView: LockItemView = _itemViewsM[i]
       //生成Int数组
       passcodeArray.append(selectedView.tag)
-      passCode = passCode.stringByAppendingString(String(selectedView.tag))
+      passCode = passCode + String(selectedView.tag)
     }
     if passCode.characters.count > 0 {
       delegate?.lockViewDelegate(self, passCode: passCode, selectedArray: passcodeArray)
     }
     
-    let time: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(_dalaytimeMsecond) * Int64(USEC_PER_SEC))
-    dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+    let time: DispatchTime = DispatchTime.now() + Double(Int64(_dalaytimeMsecond) * Int64(USEC_PER_SEC)) / Double(NSEC_PER_SEC)
+    DispatchQueue.main.asyncAfter(deadline: time) { () -> Void in
       self._isColorDefault = false
       for itemView in self._itemViewsM {
         itemView.selected = false
         //清空方向
-        itemView.direct = .Never
+        itemView.direct = .never
         //清空颜色
         itemView.isDefaultColor = false
       }
       self._itemViewsM.removeAll()
       self.setNeedsDisplay()
-      self.userInteractionEnabled = true
+      self.isUserInteractionEnabled = true
     }
     //恢复默认值
     _dalaytimeMsecond = 100
   }
   
-  private func _itemHandl(itemView: LockItemView) {
+  fileprivate func _itemHandl(_ itemView: LockItemView) {
     itemView.selected = true
     setNeedsDisplay()
     
@@ -271,24 +294,24 @@ extension LockView: UIGestureRecognizerDelegate {
   
   //MARK: - Touches Event
   
-  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    _lockHandle(touches)
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    _lockHandle(touches as NSSet)
   }
   
-  override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    _lockHandle(touches)
+  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    _lockHandle(touches as NSSet)
     self.setNeedsDisplay()
   }
   
-  override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     _gestureEnd()
   }
   
-  override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+  override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
     _gestureEnd()
   }
 }
 
 protocol LockViewDelegate: NSObjectProtocol {
-  func lockViewDelegate(lockView: LockView, passCode: String, selectedArray: [Int])
+  func lockViewDelegate(_ lockView: LockView, passCode: String, selectedArray: [Int])
 }
