@@ -21,7 +21,25 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#if os(iOS) || os(tvOS)
+    import UIKit
+#else
+    import AppKit
+#endif
 
-FOUNDATION_EXPORT double SnapKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char SnapKitVersionString[];
+
+@available(iOS 9.0, *)
+public struct ConstraintLayoutGuideDSL: ConstraintAttributesDSL {
+    
+    public var target: AnyObject? {
+        return self.guide
+    }
+    
+    internal let guide: ConstraintLayoutGuide
+    
+    internal init(guide: ConstraintLayoutGuide) {
+        self.guide = guide
+        
+    }
+    
+}
