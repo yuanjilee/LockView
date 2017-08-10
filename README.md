@@ -11,3 +11,4 @@
 - 收入常用库推荐中
 - 博客
 - 改名以及简介，提高索引率(Lock)
+- 加身份标识，以及录屏效果展示 (https://loggerhead.me/posts/gei-github-xiang-mu-dai-shang-xun-zhang.html / https://shields.io/ / http://www.jianshu.com/p/ae6749858f28)
