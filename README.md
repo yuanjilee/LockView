@@ -12,3 +12,5 @@
 - 博客
 - 改名以及简介，提高索引率(Lock)
 - 加身份标识，以及录屏效果展示 (https://loggerhead.me/posts/gei-github-xiang-mu-dai-shang-xun-zhang.html / https://shields.io/ / http://www.jianshu.com/p/ae6749858f28)
+- 适配 FaceID 人脸识别
+- 适配 iPhone X
