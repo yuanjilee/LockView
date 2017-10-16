@@ -15,3 +15,4 @@
 - 适配 FaceID 人脸识别
 - 适配 iPhone X
 - Swift Lint
+- 添加标签，like https://github.com/marcosgriselli/ViewAnimator
