@@ -54,14 +54,12 @@ class LockIndicatorView: UIView {
       let rectX: CGFloat = (rectWH + margin) * CGFloat(row) + padding
       let rectY: CGFloat = (rectWH + margin) * CGFloat(col) + padding
       let rect: CGRect = CGRect(x: rectX, y: rectY, width: rectWH, height: rectWH)
-//      CGPathAddEllipseInRect(pathM, nil, rect)
       pathM.addEllipse(in: rect)
 
       //重画:实心圆
       for j in 0 ..< _selectedArray.count {
         if i == _selectedArray[j] {
           let circlePath: CGMutablePath = CGMutablePath()
-//          CGPathAddEllipseInRect(circlePath, nil, rect)
           circlePath.addEllipse(in: rect)
           ctx.addPath(circlePath)
           ctx.fillPath()
@@ -71,9 +69,6 @@ class LockIndicatorView: UIView {
     
     ctx.addPath(pathM)
     ctx.strokePath()
-    
-    debugPrint("\(Date().timeIntervalSinceNow)")
-
   }
   
 }
@@ -91,7 +86,6 @@ extension LockIndicatorView {
   
   fileprivate func circleSelected(_ ctx: CGContext, rect: CGRect) {
     let circlePath: CGMutablePath = CGMutablePath()
-//    CGPathAddEllipseInRect(circlePath, nil, self.getselectedRect())
     circlePath.addEllipse(in: self.getselectedRect())
     ctx.addPath(circlePath)
     ctx.fillPath()

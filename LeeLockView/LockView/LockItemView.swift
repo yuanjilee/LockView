@@ -56,7 +56,7 @@ class LockItemView: UIView {
   /** 方向 */
   var direct: LockItemViewDirect! {
     didSet {
-      _angle = M_PI_4 * Double(direct.rawValue - 1)
+      _angle = .pi/4 * Double(direct.rawValue - 1)
       setNeedsDisplay()
     }
   }
@@ -110,7 +110,6 @@ extension LockItemView {
     if direct == nil {return}
     //手势结束时,重置为.Never,直接返回
     if direct == .never {return}
-    debugPrint("------------->directe =  \(direct)    and raw = \(direct.rawValue)")
     
     let trianglePathM: CGMutablePath = CGMutablePath()
     let marginSelectedCirclev: CGFloat = 4.0
@@ -119,19 +118,17 @@ extension LockItemView {
     let h: CGFloat = 5.0
     let topX: CGFloat = rect.origin.x + rect.size.width * 0.5
     let topY: CGFloat = rect.origin.y + (rect.size.width * 0.5 - h - marginSelectedCirclev - selectedRect.size.height * 0.5)
-//    CGPathMoveToPoint(trianglePathM, nil, topX, topY)
     trianglePathM.move(to: CGPoint(x: topX, y: topY))
     
     let leftPointX: CGFloat = topX - w * 0.5
     let leftPointY = topY + h
-//    CGPathAddLineToPoint(trianglePathM, nil, leftPointX, leftPointY)
     trianglePathM.addLine(to: CGPoint(x: leftPointX, y: leftPointY))
     
     let rightPointX: CGFloat = topX + w * 0.5
-//    CGPathAddLineToPoint(trianglePathM, nil, rightPointX, leftPointY)
     trianglePathM.addLine(to: CGPoint(x: rightPointX, y: leftPointY))
     
     ctx.addPath(trianglePathM)
+    (isDefaultColor ? kColorItemError : kColorItemSelected).set()
     ctx.fillPath()
   }
   
@@ -143,17 +140,26 @@ extension LockItemView {
   fileprivate func _circleNormal(_ ctx: CGContext, rect: CGRect) {
     let loopPath: CGMutablePath = CGMutablePath()
     let calRect: CGRect = self.getcalRect()
-//    CGPathAddEllipseInRect(loopPath, nil, calRect)
     loopPath.addEllipse(in: calRect)
     ctx.addPath(loopPath)
+    kColorItemNormal.set()
     ctx.strokePath()
   }
 
   fileprivate func _circleSelected(_ ctx: CGContext, rect: CGRect) {
+    // 空心外圆
+    let loopPath: CGMutablePath = CGMutablePath()
+    let calRect: CGRect = self.getcalRect()
+    loopPath.addEllipse(in: calRect)
+    ctx.addPath(loopPath)
+    (isDefaultColor ? kColorItemError : kColorItemSelected).set()
+    ctx.strokePath()
+    
+    // 实心内圆
     let circlePath: CGMutablePath = CGMutablePath()
-//    CGPathAddEllipseInRect(circlePath, nil, self.getselectedRect())
     circlePath.addEllipse(in: self.getselectedRect())
     ctx.addPath(circlePath)
+    (isDefaultColor ? kColorItemError : kColorItemSelected).set()
     ctx.fillPath()
   }
   

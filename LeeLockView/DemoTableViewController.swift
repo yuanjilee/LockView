@@ -13,17 +13,9 @@ class DemoTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    UINavigationBar.appearance().barTintColor = UIColor(hexRGB: 0x3c3d47)
-//    UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-//    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-//    
-//    UINavigationBar.appearance().backIndicatorImage = UIImage(named: "navigation_back")
-    
-
-    
-    navigationController?.navigationBar.barTintColor = UIColor(hexRGB: 0x3c3d47)
-    navigationController?.navigationBar.tintColor = UIColor.white
-    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+//    navigationController?.navigationBar.barTintColor = UIColor(hexRGB: 0x3c3d47)
+//    navigationController?.navigationBar.tintColor = UIColor.white
+//    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     
     navigationItem.title = "手势锁"
     
@@ -33,7 +25,7 @@ class DemoTableViewController: UITableViewController {
     navigationController?.navigationBar.shadowImage = UIImage()
     
     let backButtonImage: UIImage = UIImage(named: "navigation_back")!
-    navigationController?.navigationBar.tintColor = UIColor.white
+    navigationController?.navigationBar.tintColor = UIColor(red: 0.24, green: 0.24, blue: 0.24, alpha: 1.0)
     navigationController?.navigationBar.backIndicatorImage = backButtonImage
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
     navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)

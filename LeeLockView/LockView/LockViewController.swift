@@ -66,17 +66,17 @@ class LockViewController: UIViewController {
     }
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-
-    navigationController?.navigationBar.isTranslucent = true
-  }
-  
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    
-    navigationController?.navigationBar.isTranslucent = false
-  }
+//  override func viewWillAppear(_ animated: Bool) {
+//    super.viewWillAppear(animated)
+//
+//    navigationController?.navigationBar.isTranslucent = true
+//  }
+//
+//  override func viewWillDisappear(_ animated: Bool) {
+//    super.viewWillDisappear(animated)
+//
+//    navigationController?.navigationBar.isTranslucent = false
+//  }
 }
 
 extension LockViewController {
@@ -173,10 +173,10 @@ extension LockViewController {
     indicator = LockIndicatorView()
     view.addSubview(indicator)
     indicator.snp.makeConstraints { (make) -> Void in
-      make.top.equalTo(view.snp.top).offset(24 + 20 + 64)
+      make.top.equalTo(view.snp.top).offset(24 + 20)
       make.centerX.equalTo(view.snp.centerX).offset(8)
-      make.height.equalTo(50)
-      make.width.equalTo(50)
+      make.height.equalTo(60)
+      make.width.equalTo(60)
     }
   }
   
@@ -203,11 +203,27 @@ extension LockViewController {
   }
   
   fileprivate func _initLockView() {
-    lock.snp.makeConstraints { (make) -> Void in
-      make.leading.equalTo(view.snp.leading)
-      make.trailing.equalTo(view.snp.trailing)
-      make.top.equalTo(_lockTitleLabel!.snp.bottom)
-      make.height.equalTo(SCREEN_SIZE.width)
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      lock.snp.makeConstraints { (make) -> Void in
+        make.centerX.equalToSuperview()
+        make.centerY.equalTo(view).multipliedBy(1.2)
+        make.height.equalTo(320)
+        make.width.equalTo(320)
+      }
+    } else {
+      lock.snp.makeConstraints { (make) -> Void in
+        let leftMagin = (48 / 376) * UIScreen.main.bounds.width
+        let lockW = UIScreen.main.bounds.width - (2 * leftMagin)
+        var lockTopMagin = (214 / 667) * UIScreen.main.bounds.height
+        if lockType == .Verify {
+          lockTopMagin = (314 / 667) * UIScreen.main.bounds.height
+        }
+        
+        make.top.equalTo(lockTopMagin)
+        make.centerX.equalToSuperview()
+        make.height.equalTo(lockW)
+        make.width.equalTo(lockW)
+      }
     }
   }
   
@@ -246,7 +262,6 @@ extension LockViewController {
         LockInfoStorage.setSwitchState(withBoolValue: true)
         lock.showDismissLockView()
         //成功提示语
-//        MBProgressHUD.showMessage("设置成功", hideAfterDelay: 1, complete: nil)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1000 * USEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: { () -> Void in
           _ = self.navigationController?.popViewController(animated: true)
         })
@@ -481,8 +496,7 @@ extension LockViewController {
   //MARK: - Apperance
   
   fileprivate func _setupApperance() {
-    view.backgroundColor = UIColor(hexString: "#D13635")
-    
+    view.backgroundColor = kVerifyBackgroundColor
   }
   
 }

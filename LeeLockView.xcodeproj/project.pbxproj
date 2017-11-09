@@ -53,7 +53,6 @@
 		7A4DEC641C5B19E500A2515D /* LockSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5D1C5B19E500A2515D /* LockSettingViewController.swift */; };
 		7A4DEC651C5B19E500A2515D /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5E1C5B19E500A2515D /* LockView.swift */; };
 		7A4DEC661C5B19E500A2515D /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC5F1C5B19E500A2515D /* LockViewController.swift */; };
-		7A4DEC861C5B1CA400A2515D /* UIColor+DYKAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC851C5B1CA400A2515D /* UIColor+DYKAddition.m */; };
 		7A4DEC8D1C5B40B900A2515D /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DEC8C1C5B40B900A2515D /* DemoTableViewController.swift */; };
 		7A4DEC8F1C5B451700A2515D /* navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DEC8E1C5B451700A2515D /* navigation_back@2x.png */; };
 		7A4DEC9D1C5B4CA500A2515D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DEC9F1C5B4CA500A2515D /* Localizable.strings */; };
@@ -131,8 +130,6 @@
 		7A4DEC5E1C5B19E500A2515D /* LockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		7A4DEC5F1C5B19E500A2515D /* LockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
 		7A4DEC831C5B1CA300A2515D /* LeeLockView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeeLockView-Bridging-Header.h"; sourceTree = "<group>"; };
-		7A4DEC841C5B1CA400A2515D /* UIColor+DYKAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DYKAddition.h"; sourceTree = "<group>"; };
-		7A4DEC851C5B1CA400A2515D /* UIColor+DYKAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DYKAddition.m"; sourceTree = "<group>"; };
 		7A4DEC8C1C5B40B900A2515D /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
 		7A4DEC8E1C5B451700A2515D /* navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_back@2x.png"; sourceTree = "<group>"; };
 		7A4DEC9E1C5B4CA500A2515D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -209,7 +206,6 @@
 			children = (
 				7A25D23E1DAE4F96003467CC /* SnapKit */,
 				7A4DEC921C5B49A500A2515D /* Local */,
-				7A4DEC871C5B1E5200A2515D /* Extension */,
 				7A4DEC581C5B19E500A2515D /* LockView */,
 				7A4DEC191C5B173B00A2515D /* LeeLockView */,
 				7A4DEC2E1C5B173B00A2515D /* LeeLockViewTests */,
@@ -275,15 +271,6 @@
 			);
 			name = LockView;
 			path = LeeLockView/LockView;
-			sourceTree = "<group>";
-		};
-		7A4DEC871C5B1E5200A2515D /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				7A4DEC841C5B1CA400A2515D /* UIColor+DYKAddition.h */,
-				7A4DEC851C5B1CA400A2515D /* UIColor+DYKAddition.m */,
-			);
-			name = Extension;
 			sourceTree = "<group>";
 		};
 		7A4DEC921C5B49A500A2515D /* Local */ = {
@@ -439,7 +426,6 @@
 				7A4DEC1D1C5B173B00A2515D /* ViewController.swift in Sources */,
 				7A4DEC631C5B19E500A2515D /* LockPreference.swift in Sources */,
 				7A25D2781DAE4F96003467CC /* ConstraintView+Extensions.swift in Sources */,
-				7A4DEC861C5B1CA400A2515D /* UIColor+DYKAddition.m in Sources */,
 				7A25D27B1DAE4F96003467CC /* Debugging.swift in Sources */,
 				7A25D2621DAE4F96003467CC /* ConstraintConfig.swift in Sources */,
 				7A25D2671DAE4F96003467CC /* ConstraintInsetTarget.swift in Sources */,

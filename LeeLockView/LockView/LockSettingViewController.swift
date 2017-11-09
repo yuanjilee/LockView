@@ -96,9 +96,8 @@ extension LockSettingViewController {
   @objc fileprivate func _gestureSwitchDidClick() {
     let switchState: Bool = _gestureSwith.isOn
     LockInfoStorage.setSwitchState(withBoolValue: switchState)
-    debugPrint("--------state = \(switchState)")
     _tableView.reloadData()
-    //改为动画刷新 TODO: liyuanji@worktile.com
+    //改为动画刷新 TODO: lyj.step@gmail.com
 //    let range: NSRange = NSRange(location: 0, length: 2)
 //    _tableView.reloadSections(NSIndexSet(indexesInRange: range), withRowAnimation: .Fade)
   }

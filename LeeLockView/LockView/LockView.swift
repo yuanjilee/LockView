@@ -74,7 +74,6 @@ class LockView: UIView {
     for(_,itemView) in _itemViewsM.enumerated() {
       ctx.addEllipse(in: itemView.frame)
     }
-//    CGContextEOClip(ctx)
     ctx.clip()
     let pathM: CGMutablePath = CGMutablePath()
     
@@ -89,10 +88,8 @@ class LockView: UIView {
     for(index,itemView) in _itemViewsM.enumerated() {
       let directPoint: CGPoint = itemView.center
       if index == 0 {
-//        CGPathMoveToPoint(pathM, nil, directPoint.x, directPoint.y)
         pathM.move(to: CGPoint(x: directPoint.x, y: directPoint.y))
       } else {
-//        CGPathAddLineToPoint(pathM, nil, directPoint.x, directPoint.y)
         pathM.addLine(to: CGPoint(x: directPoint.x, y: directPoint.y))
       }
     }
@@ -109,7 +106,7 @@ class LockView: UIView {
     super.layoutSubviews()
     
     if UIDevice.current.userInterfaceIdiom == .pad {
-      let itemViewWH: CGFloat = 60
+      let itemViewWH: CGFloat = 50
       let padding: CGFloat = 50
       let marginx: CGFloat = (bounds.size.width - itemViewWH * 3 - padding * 2) / 2.0
       let marginy: CGFloat = 45
@@ -121,16 +118,17 @@ class LockView: UIView {
         let frame: CGRect = CGRect(x: x, y: y, width: itemViewWH, height: itemViewWH)
         subview.tag = index
         subview.frame = frame
-        debugPrint("yyyyyyyy === \(itemViewWH, x, y, marginx, marginy, bounds.size)")
       }
     }
     else {
-      let itemViewWH: CGFloat = (frame.size.width - 4 * marginValue) / 3.0
+      let itemW = (44 / 376) * UIScreen.main.bounds.width
+      let itemViewWH: CGFloat = (self.frame.size.width - (2 * itemW)) / 3.0
+      
       for(index,subview) in subviews.enumerated() {
         let row: Int = index % 3
         let col: Int = index / 3
-        let x: CGFloat = marginValue * CGFloat(row + 1) + CGFloat(row) * itemViewWH
-        let y: CGFloat = marginValue * CGFloat(col + 1) + CGFloat(col) * itemViewWH
+        let x: CGFloat = itemW * CGFloat(row) + CGFloat(row) * itemViewWH
+        let y: CGFloat = itemW * CGFloat(col) + CGFloat(col) * itemViewWH
         let frame: CGRect = CGRect(x: x, y: y, width: itemViewWH, height: itemViewWH)
         subview.tag = index
         subview.frame = frame
@@ -235,7 +233,7 @@ extension LockView {
       passcodeArray.append(selectedView.tag)
       passCode = passCode + String(selectedView.tag)
     }
-    if passCode.characters.count > 0 {
+    if passCode.count > 0 {
       delegate?.lockViewDelegate(self, passCode: passCode, selectedArray: passcodeArray)
     }
     
