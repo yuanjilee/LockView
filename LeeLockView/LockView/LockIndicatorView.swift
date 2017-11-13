@@ -6,12 +6,15 @@
 //  Copyright © 2015年 yuanjilee. All rights reserved.
 //
 
-/**
-  abstract: 指示器
-*/
-
 import UIKit
 
+/// 指示器
+///
+/// 参数: 无
+///
+///
+/// @since 1.0
+/// @author yuanjilee
 class LockIndicatorView: UIView {
 
   //MARK: - Common

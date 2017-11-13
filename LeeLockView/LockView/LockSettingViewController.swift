@@ -6,13 +6,16 @@
 //  Copyright © 2015年 yuanjilee. All rights reserved.
 //
 
-/**
-  abstract: 设置界面 
-*/
-
 import UIKit
 import LocalAuthentication
 
+/// 设置界面
+///
+/// 参数: 无
+///
+///
+/// @since 1.0
+/// @author yuanjilee
 class LockSettingViewController: UIViewController {
   
   //MARK: - Commons
@@ -21,6 +24,7 @@ class LockSettingViewController: UIViewController {
   let celltitle: [String] = [NSLocalizedString("PATTERN_PASSWORD", comment: ""),
                              NSLocalizedString("FINGERPRINT_UNLOCK", comment: ""),
                              NSLocalizedString("RESET_PASSWORD_GESTURE", comment: "")]
+  
   
   //MARK: - Property
   

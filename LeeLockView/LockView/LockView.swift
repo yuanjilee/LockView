@@ -6,10 +6,6 @@
 //  Copyright © 2015年 yuanjilee. All rights reserved.
 //
 
-/**
-  abstract: 整个解锁图案随手势的绘制过程及状态
-*/
-
 import UIKit
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
@@ -31,7 +27,13 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   }
 }
 
-
+/// 整个解锁图案随手势的绘制过程及状态
+///
+/// 参数: 无
+///
+///
+/// @since 1.0
+/// @author yuanjilee
 class LockView: UIView {
 
   //MARK: - commons

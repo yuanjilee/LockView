@@ -6,12 +6,15 @@
 //  Copyright © 2015年 yuanjilee. All rights reserved.
 //
 
-/**
-  abstract: 数据存储
-*/
-
 import UIKit
 
+/// 数据存储
+///
+/// 参数: 无
+///
+///
+/// @since 1.0
+/// @author yuanjilee
 class LockInfoStorage: NSObject {
   
   fileprivate static let kPassCodeKey: String = "LockPassCodeKey"

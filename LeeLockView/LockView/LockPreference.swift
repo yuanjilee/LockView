@@ -39,7 +39,7 @@ let kTipColorError: UIColor = kColorLineError
 let kColorIndicatorNormal: UIColor = UIColor(red: 0.59, green: 0.59, blue: 0.59, alpha: 1.0)
 
 /// 忘记密码、指纹锁按钮字体颜色
-let kForgetBtnColorNormal: UIColor  = UIColor.white
+let kForgetBtnColorNormal: UIColor  = UIColor.black
 
 /// 验证页面背景颜色
 let kVerifyBackgroundColor: UIColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.0)

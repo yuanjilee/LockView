@@ -6,12 +6,15 @@
 //  Copyright © 2015年 yuanjilee. All rights reserved.
 //
 
-/**
-  abstract: 绘制单个手势圆形图形，以及选中状态、错误状态
-*/
-
 import UIKit
 
+/// 绘制单个手势圆形图形，以及选中状态、错误状态
+///
+/// 参数: 无
+///
+///
+/// @since 1.0
+/// @author yuanjilee
 class LockItemView: UIView {
 
   enum LockItemViewDirect: Int {

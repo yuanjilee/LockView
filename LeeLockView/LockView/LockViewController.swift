@@ -6,37 +6,40 @@
 //  Copyright © 2015年 yuanjilee. All rights reserved.
 //
 
-/**
-  abstract: 绘制完手势后的事件处理 (Setting + Verifiy)
-*/
-
 import UIKit
 import LocalAuthentication
 
+/// 绘制完手势后的事件处理 (setting + verifiy)
+///
+/// 参数: 无
+///
+///
+/// @since 1.0
+/// @author yuanjilee
 class LockViewController: UIViewController {
   
+  
+  // MARK: - Enum
+  
   enum LockType: String {
-    
-    case Setting = "Setting"
-    
-    case Verify = "Verify"
-    
-    case Modify = "Modify"
+    case setting = "setting"
+    case verify = "verify"
+    case modify = "modify"
   }
   
   
-  //MARK: - Commons
+  // MARK: - Commons
   
   var lock: LockView!
   var indicator: LockIndicatorView!
-  let SCREEN_SIZE: CGSize = UIScreen.main.bounds.size
-  let kpassCodeAttemptAmount: Int = 4
-  let LCK_DEFAULT_CORNER_RADIUS = 5.0
+  let kScreenSize: CGSize = UIScreen.main.bounds.size
+  let kPassCodeAttemptAmount: Int = 4
+  let kCornerRadius = 5.0
   
   
-  //MARK: - Property
+  // MARK: - Property
   
-  var lockType: LockType = .Setting
+  var lockType: LockType = .setting
   fileprivate var _lockTitleLabel: UILabel?
   fileprivate var _avatarImageView: UIImageView!
   //三步提示
@@ -49,6 +52,15 @@ class LockViewController: UIViewController {
   fileprivate var _passcodeSaved: String = ""
   fileprivate var _passcodeAttemtCount: Int = 0
   
+  lazy var forgetBtn: UIButton = { [unowned self] in
+    let forgetBtn: UIButton = UIButton(type: .custom)
+    forgetBtn.addTarget(self, action: #selector(LockViewController._forgetBtnClick), for: .touchUpInside)
+    forgetBtn.setTitle(NSLocalizedString("FORGET_PASSWORD", comment: ""), for: UIControlState())
+    forgetBtn.setTitleColor(kForgetBtnColorNormal, for: UIControlState())
+    forgetBtn.titleLabel?.font = UIFont.systemFont(ofSize: kSmallFontSize)
+    return forgetBtn
+  }()
+  
   
   //MARK: - Lifecycle
   
@@ -56,7 +68,6 @@ class LockViewController: UIViewController {
     super.viewDidLoad()
     
     _setupApperance()
-    
     _prepare()
     
     // TouchID
@@ -65,18 +76,6 @@ class LockViewController: UIViewController {
       _touchID()
     }
   }
-  
-//  override func viewWillAppear(_ animated: Bool) {
-//    super.viewWillAppear(animated)
-//
-//    navigationController?.navigationBar.isTranslucent = true
-//  }
-//
-//  override func viewWillDisappear(_ animated: Bool) {
-//    super.viewWillDisappear(animated)
-//
-//    navigationController?.navigationBar.isTranslucent = false
-//  }
 }
 
 extension LockViewController {
@@ -88,12 +87,12 @@ extension LockViewController {
     
     switch lockType {
       
-    case .Setting:
+    case .setting:
       _initIndicatorView()
       _initLockTitleLabel()
       _lockTitleLabel?.text = NSLocalizedString("DRAW_GESTURE_PASSWORD", comment: "")
 
-    case .Verify:
+    case .verify:
       
       _initView()
       _initAvatarImageView()
@@ -106,17 +105,23 @@ extension LockViewController {
     _initLockView()
   }
   
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    
+    coordinator.animate(alongsideTransition: { _ in
+      self.configureLayout(size)
+    }, completion: nil)
+  }
+  
+  open func configureLayout(_ size: CGSize = UIApplication.shared.delegate?.window??.bounds.size ?? .zero) {
+    
+  }
+  
   fileprivate func _initView() {
-    let forgetBtn: UIButton = UIButton(type: .custom)
-    forgetBtn.addTarget(self, action: #selector(LockViewController._forgetBtnClick), for: .touchUpInside)
-    forgetBtn.setTitle(NSLocalizedString("FORGET_PASSWORD", comment: ""), for: UIControlState())
-    forgetBtn.setTitleColor(kForgetBtnColorNormal, for: UIControlState())
-    forgetBtn.titleLabel?.font = UIFont.systemFont(ofSize: kSmallFontSize)
     view.addSubview(forgetBtn)
-    forgetBtn.snp.makeConstraints { (make) -> Void in
-      make.centerX.equalTo(view.snp.centerX)
-      make.bottom.equalTo(view.snp.bottom).offset(-10)
-    }
+    forgetBtn.translatesAutoresizingMaskIntoConstraints = false
+    view.addConstraints([NSLayoutConstraint(item: forgetBtn, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
+                         NSLayoutConstraint(item: forgetBtn, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10)])
     
     let isOpenTouchIDSwitch = LockInfoStorage.getTouchIDState()
     if isOpenTouchIDSwitch {
@@ -126,10 +131,11 @@ extension LockViewController {
       fingerBtn.setTitleColor(kForgetBtnColorNormal, for: UIControlState())
       fingerBtn.titleLabel?.font = UIFont.systemFont(ofSize: kSmallFontSize)
       view.addSubview(fingerBtn)
-      fingerBtn.snp.makeConstraints { (make) -> Void in
-        make.trailing.equalTo(view.snp.trailing).offset(-20)
-        make.bottom.equalTo(view.snp.bottom).offset(-10)
-      }
+      
+      fingerBtn.translatesAutoresizingMaskIntoConstraints = false
+      view.addConstraints([NSLayoutConstraint(item: fingerBtn, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -20),
+                           NSLayoutConstraint(item: fingerBtn, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10)])
+      
       //忘记密码位置左移,并移除其上所有约束  或 snp.remakeContraints
       forgetBtn.removeConstraints(forgetBtn.constraints)
       for constraints in (forgetBtn.superview?.constraints)! {
@@ -137,17 +143,16 @@ extension LockViewController {
           forgetBtn.superview?.removeConstraint(constraints)
         }
       }
-      forgetBtn.snp.makeConstraints { (make) -> Void in
-        make.leading.equalTo(view.snp.leading).offset(20)
-        make.bottom.equalTo(view.snp.bottom).offset(-10)
-      }
+      
+      view.addConstraints([NSLayoutConstraint(item: forgetBtn, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 20),
+                           NSLayoutConstraint(item: forgetBtn, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10)])
     }
   }
   
   
   fileprivate func _initAvatarImageView() {
     
-    if lockType == .Verify {
+    if lockType == .verify {
       _avatarImageView = UIImageView()
       _avatarImageView.layer.masksToBounds = true
       _avatarImageView.layer.cornerRadius = CGFloat(35)
@@ -160,24 +165,22 @@ extension LockViewController {
       
       view.addSubview(_avatarImageView)
       
-      _avatarImageView.snp.makeConstraints { (make) -> Void in
-        make.top.equalTo(view.snp.top).offset(60)
-        make.centerX.equalTo(view.snp.centerX)
-        make.height.equalTo(70)
-        make.width.equalTo(70)
-      }
+      _avatarImageView.translatesAutoresizingMaskIntoConstraints = false
+      view.addConstraints([NSLayoutConstraint(item: _avatarImageView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 60),
+                           NSLayoutConstraint(item: _avatarImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 70),
+                           NSLayoutConstraint(item: _avatarImageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 70),
+                           NSLayoutConstraint(item: _avatarImageView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)])
     }
   }
   
   fileprivate func _initIndicatorView() {
     indicator = LockIndicatorView()
     view.addSubview(indicator)
-    indicator.snp.makeConstraints { (make) -> Void in
-      make.top.equalTo(view.snp.top).offset(24 + 20)
-      make.centerX.equalTo(view.snp.centerX).offset(8)
-      make.height.equalTo(60)
-      make.width.equalTo(60)
-    }
+    indicator.translatesAutoresizingMaskIntoConstraints = false
+    view.addConstraints([NSLayoutConstraint(item: indicator, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 24 + 20),
+                         NSLayoutConstraint(item: indicator, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 60),
+                         NSLayoutConstraint(item: indicator, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 60),
+                         NSLayoutConstraint(item: indicator, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 8)])
   }
   
   fileprivate func _initLockTitleLabel() {
@@ -188,49 +191,46 @@ extension LockViewController {
       _lockTitleLabel?.textAlignment = .center
       _lockTitleLabel?.textColor = kTipColorNormal
       _lockTitleLabel?.font = UIFont.systemFont(ofSize: kNormalFontSize)
-      _lockTitleLabel?.snp.makeConstraints({ (make) -> Void in
-        make.leading.equalTo(view.snp.leading)
-        make.trailing.equalTo(view.snp.trailing)
-        if lockType == .Verify {
-          make.top.equalTo(_avatarImageView.snp.bottom).offset(20)
-        }
-        else if lockType == .Setting {
-          make.top.equalTo(indicator.snp.bottom).offset(0)
-        }
-        make.height.equalTo(20)
-      })
-    }
+      _lockTitleLabel?.translatesAutoresizingMaskIntoConstraints = false
+      view.addConstraints([NSLayoutConstraint(item: _lockTitleLabel!, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0),
+                           NSLayoutConstraint(item: _lockTitleLabel!, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0),
+                           NSLayoutConstraint(item: _lockTitleLabel!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20)])
+      if lockType == .verify {
+        view.addConstraint(NSLayoutConstraint(item: _lockTitleLabel!, attribute: .top, relatedBy: .equal, toItem: _avatarImageView, attribute: .bottom, multiplier: 1, constant: 20))
+      }
+      else if lockType == .setting {
+        view.addConstraint(NSLayoutConstraint(item: _lockTitleLabel!, attribute: .top, relatedBy: .equal, toItem: indicator, attribute: .bottom, multiplier: 1, constant: 0))
+      }
   }
+}
   
   fileprivate func _initLockView() {
+    lock.translatesAutoresizingMaskIntoConstraints = false
     if UIDevice.current.userInterfaceIdiom == .pad {
-      lock.snp.makeConstraints { (make) -> Void in
-        make.centerX.equalToSuperview()
-        make.centerY.equalTo(view).multipliedBy(1.2)
-        make.height.equalTo(320)
-        make.width.equalTo(320)
-      }
+      view.addConstraints([NSLayoutConstraint(item: lock, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
+                           NSLayoutConstraint(item: lock, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.2, constant: 0),
+                           NSLayoutConstraint(item: lock, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 320),
+                           NSLayoutConstraint(item: lock, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 320)])
     } else {
-      lock.snp.makeConstraints { (make) -> Void in
-        let leftMagin = (48 / 376) * UIScreen.main.bounds.width
-        let lockW = UIScreen.main.bounds.width - (2 * leftMagin)
-        var lockTopMagin = (214 / 667) * UIScreen.main.bounds.height
-        if lockType == .Verify {
-          lockTopMagin = (314 / 667) * UIScreen.main.bounds.height
-        }
-        
-        make.top.equalTo(lockTopMagin)
-        make.centerX.equalToSuperview()
-        make.height.equalTo(lockW)
-        make.width.equalTo(lockW)
+      
+      let leftMagin = (48 / 376) * UIScreen.main.bounds.width
+      let lockW = UIScreen.main.bounds.width - (2 * leftMagin)
+      var lockTopMagin = (214 / 667) * UIScreen.main.bounds.height
+      if lockType == .verify {
+        lockTopMagin = (314 / 667) * UIScreen.main.bounds.height
       }
+      
+      view.addConstraints([NSLayoutConstraint(item: lock, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
+                           NSLayoutConstraint(item: lock, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: lockTopMagin),
+                           NSLayoutConstraint(item: lock, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: lockW),
+                           NSLayoutConstraint(item: lock, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: lockW)])
     }
   }
   
   //创建密码
   fileprivate func _creatPasscode(_ passcode: String) {
     
-    if _passcodefirst == "" && _passcodeConfirm == ""{
+    if _passcodefirst == "" && _passcodeConfirm == "" {
       _passcodefirst = passcode
       _setTip(_tip2)
       
@@ -327,25 +327,25 @@ extension LockViewController: LockViewDelegate {
     debugPrint("passcode = \(passcode)")
     
     switch lockType {
-    case .Setting:
+    case .setting:
       _tip1 = NSLocalizedString("SET_A_PATTERN_PASSWORD", comment: "")
       _tip2 = NSLocalizedString("ENTER_AGAIN_FOR_CONFIRAMTION", comment: "")
       _tip3 = NSLocalizedString("CREATING_SUCCESS", comment: "")
       
       //密码长度4位
-      if passcode.characters.count < 4 {
+      if passcode.count < 4 {
         _tip2 = NSLocalizedString("AT_LAST_4_POINTS_SET_AGAIN", comment: "")
         _setTip(_tip2)
       }
       else {
         //刷新 indicator
-        if lockType == .Setting {
+        if lockType == .setting {
           indicator.setSelectedArray(selectedArray)
         }
         _creatPasscode(passcode)
       }
       
-    case .Verify:
+    case .verify:
       _tip1 = NSLocalizedString("ENTER_THE_GESTURE_PASSWORD", comment: "")
       _tip2 = "密码错误，还可以再输入\(_passcodeAttemtCount)次"
       let alert: String = String(format:NSLocalizedString("INCORRECT_PATTERN_CHANCE_LEFT", comment: "") , _passcodeAttemtCount)
@@ -367,8 +367,8 @@ extension LockViewController {
   class func showSettingLockViewController(_ aboveViewController: UIViewController) -> LockViewController {
     let lockVC: LockViewController = LockViewController()
     lockVC.navigationItem.title = NSLocalizedString("PATTERN_PASSWORD", comment: "");
-    lockVC.lockType = .Setting
-    lockVC._passcodeAttemtCount = lockVC.kpassCodeAttemptAmount
+    lockVC.lockType = .setting
+    lockVC._passcodeAttemtCount = lockVC.kPassCodeAttemptAmount
     aboveViewController.navigationController?.pushViewController(lockVC, animated: true)
     return lockVC
   }
@@ -376,8 +376,8 @@ extension LockViewController {
   class func showVerifyLockViewController(_ aboveViewController: UIViewController) -> LockViewController {
     let lockVC: LockViewController = LockViewController()
     lockVC.navigationController?.isNavigationBarHidden = true
-    lockVC.lockType = .Verify
-    lockVC._passcodeAttemtCount = lockVC.kpassCodeAttemptAmount
+    lockVC.lockType = .verify
+    lockVC._passcodeAttemtCount = lockVC.kPassCodeAttemptAmount
     aboveViewController.present(lockVC, animated: false, completion: nil)
     return lockVC
   }
