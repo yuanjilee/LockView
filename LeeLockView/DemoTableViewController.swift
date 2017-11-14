@@ -7,19 +7,14 @@
 //
 
 import UIKit
+import LockView
 
 class DemoTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    navigationController?.navigationBar.barTintColor = UIColor(hexRGB: 0x3c3d47)
-//    navigationController?.navigationBar.tintColor = UIColor.white
-//    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-    
     navigationItem.title = "手势锁"
-    
-
     
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
     navigationController?.navigationBar.shadowImage = UIImage()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LockView
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
