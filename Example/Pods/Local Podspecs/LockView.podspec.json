@@ -1,0 +1,29 @@
+{
+  "name": "LockView",
+  "version": "3.0.0",
+  "summary": "Gesture Lock with Swift",
+  "description": "Gesture Lock with Swift.",
+  "homepage": "https://github.com/yuanjilee/LeeLockView",
+  "license": ":type => 'MIT', :file => 'LICENSE'",
+  "authors": {
+    "yuanjilee": "824528524@qq.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/yuanjilee/LeeLockView.git",
+    "tag": "3.0.0"
+  },
+  "resource_bundles": {
+    "LockView": [
+      "LockView/Assets.xcassets/*/*.png",
+      "LockView/Resources/*.lproj"
+    ]
+  },
+  "source_files": "LockView/Classes/**/*",
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ]
+}

@@ -1,0 +1,6 @@
+framework module Pods_LeeLockView {
+  umbrella header "Pods-LeeLockView-umbrella.h"
+
+  export *
+  module * { export * }
+}

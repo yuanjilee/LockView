@@ -1,0 +1,1067 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1341DFB77312D8CA20E0427D2B4A6084 /* Pods-LeeLockViewUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C84288532C2C6476335162C81DA7A238 /* Pods-LeeLockViewUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13C306BF4978503B3F9A1EB8AA6AF23B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		1403C23B6C54BF8349CF8E12A59FCC8F /* LockPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D2A455425C96A7FC6D1791F0D93A90 /* LockPreference.swift */; };
+		22E3758F07CA40882562E3FFEE341C53 /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143945DF7C3EDBD6CEE00E424FBEB38 /* LockViewController.swift */; };
+		23D13E80FDC4398040E0E33A58527046 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		2560D3D9165EE3ED088B04931C7E019F /* LockView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11EB0054DBE88F08E9D0FEEC948F3726 /* LockView.bundle */; };
+		35F995E483331E17270701B9BA062928 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		3CBA4183E16133FDC42472A8CA58B861 /* LockView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C578393ACB898E5A6925B7B871B5B9 /* LockView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5237361CA99ED79A9EB3EA4F9344A173 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		54F18C59810A30595A5B00A826522BE1 /* LockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96178AAB2305E54381F7C76F89E3CEF5 /* LockItemView.swift */; };
+		59499F9BAB565B8D8FA28C5137C5764A /* LockInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3633289788DABB5B1CB63EE994512E /* LockInfoStorage.swift */; };
+		59AECB23D75F59FA42CA4AC9DC810199 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9DEBA111BEC2BDAC37A6CEF0258C946C /* en.lproj */; };
+		6D1CA63B1CB927F6F518BCF43C4A0DFF /* Pods-LeeLockView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B86A3E816203D9D96D0AF50A5BE15 /* Pods-LeeLockView-dummy.m */; };
+		6DA5F35188A72777A28F1E140362AF86 /* LockView.h in Headers */ = {isa = PBXBuildFile; fileRef = E704B4DC6D4A44464B09E8A074A73891 /* LockView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77F89D8FF924802E36927865A4F80410 /* Pods-LeeLockView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B21621F08180AAE29661F0A97C2B4D8D /* Pods-LeeLockView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81618571120F26F0B66DA7F31BB9DF10 /* LockIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA14C6A5A38B91B633C66B1E87ABC956 /* LockIndicatorView.swift */; };
+		8534EE1DF898E268560AC1FAB7BCAC1C /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BB01E0A3C4B8F2E473D400E61A9E5712 /* zh-Hans.lproj */; };
+		A36FC9F6D7421195E2879FB9429AF61C /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0278507B08CB6C77C685A53BD619DF7 /* Commons.swift */; };
+		B28D8C9875C488D8EB4EAAB211AF790B /* LockView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F812D30CB69203CD7E2A50FA43289A79 /* LockView-dummy.m */; };
+		B907F2464B4DF9B6607D4DB889A4F72D /* LockSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C32DFA08A252780B43706F6003B1066 /* LockSettingViewController.swift */; };
+		BD7F81AEF3F80D145A31752660F9BEB8 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F71A4F29151A70AB9A64ECB0AFA759 /* LockView.swift */; };
+		CDB6759AF3EB7D61CD238E60C44BB53A /* Pods-LeeLockViewTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B77E3D6BD23E7FB00683ADF6A71EA2C /* Pods-LeeLockViewTests-dummy.m */; };
+		CF8D3EDA60BF90901C50BFF3364D45A6 /* Pods-LeeLockViewTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74184AA58088079C3197B4D660C96CD9 /* Pods-LeeLockViewTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7C3986BEA0B5F3506ED9CF09E8A82E7 /* Pods-LeeLockViewUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6673E7482295A8EFFC485975BA4F350 /* Pods-LeeLockViewUITests-dummy.m */; };
+		E73E12921756BE275D75DF37A661E28D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C4189B186DE18E008E0F964E58F875E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8546BABC21E676D8C5EB89CC6C6CC668;
+			remoteInfo = LockView;
+		};
+		87B97DCED68B78F32E3EAE55B2366F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6581C556939A0B2A1090935454B3867;
+			remoteInfo = "LockView-LockView";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03CE3C5EE7DBE23B465D9F43D069BEC2 /* Pods-LeeLockView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeeLockView.release.xcconfig"; sourceTree = "<group>"; };
+		06D2A455425C96A7FC6D1791F0D93A90 /* LockPreference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockPreference.swift; sourceTree = "<group>"; };
+		11EB0054DBE88F08E9D0FEEC948F3726 /* LockView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LockView.bundle; path = LockView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		18A970C6BC2E3700BEF258535E846780 /* Pods-LeeLockViewTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeeLockViewTests-frameworks.sh"; sourceTree = "<group>"; };
+		1B77E3D6BD23E7FB00683ADF6A71EA2C /* Pods-LeeLockViewTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LeeLockViewTests-dummy.m"; sourceTree = "<group>"; };
+		1D8F6C46D7ED7FBDEA1AD15DE72EA0D8 /* Pods_LeeLockView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LeeLockView.framework; path = "Pods-LeeLockView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C3B86A3E816203D9D96D0AF50A5BE15 /* Pods-LeeLockView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LeeLockView-dummy.m"; sourceTree = "<group>"; };
+		2DE2EAA1D86DB7D1940FAD73BE3113CA /* Pods-LeeLockViewTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeeLockViewTests-resources.sh"; sourceTree = "<group>"; };
+		2E3F3D46E07F2805EF5434F854E8EA03 /* Pods-LeeLockViewUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LeeLockViewUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2F3633289788DABB5B1CB63EE994512E /* LockInfoStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockInfoStorage.swift; sourceTree = "<group>"; };
+		311CF278813111D6D938C91CAF25AF57 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31DCD124A169E397D634D3320EBDAF92 /* Pods-LeeLockView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LeeLockView.modulemap"; sourceTree = "<group>"; };
+		3449C27AC0CF6F18B53F0FBDA05189F0 /* Pods-LeeLockViewUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeeLockViewUITests-resources.sh"; sourceTree = "<group>"; };
+		3598BC0A1CA1BB8B31994445BE7F5C2C /* Pods-LeeLockView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LeeLockView-acknowledgements.markdown"; sourceTree = "<group>"; };
+		39F5FE46FA364A6C37A899392A8B850B /* LockView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LockView.modulemap; sourceTree = "<group>"; };
+		3B59C8CF0D742B40EAF5F10B4C2D1633 /* Pods-LeeLockViewUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeeLockViewUITests-frameworks.sh"; sourceTree = "<group>"; };
+		453F333B1D09D5BF4512AE861BA3FD9D /* Pods-LeeLockView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LeeLockView-acknowledgements.plist"; sourceTree = "<group>"; };
+		579AE94E4C5122CFA9454616D5AFB9C6 /* Pods-LeeLockViewTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LeeLockViewTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5C7F60DAD314812AF486368D817A1A30 /* Pods-LeeLockViewTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LeeLockViewTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		6040794B8F3FC5F6581949D80A910638 /* Pods-LeeLockViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeeLockViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		61C366D913F100BABDEA1FA2EE5392E4 /* Pods-LeeLockView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeeLockView.debug.xcconfig"; sourceTree = "<group>"; };
+		65374734A4ECECF11A3E0F5B31D8C9FB /* Pods-LeeLockView-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeeLockView-frameworks.sh"; sourceTree = "<group>"; };
+		6CB033E3A960C3C1CDB6B8A4FC7D77EA /* LockView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LockView.framework; path = LockView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74184AA58088079C3197B4D660C96CD9 /* Pods-LeeLockViewTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LeeLockViewTests-umbrella.h"; sourceTree = "<group>"; };
+		79C0F678D5EA5E18CA464BC5B39A5463 /* Pods_LeeLockViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LeeLockViewTests.framework; path = "Pods-LeeLockViewTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C32DFA08A252780B43706F6003B1066 /* LockSettingViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockSettingViewController.swift; sourceTree = "<group>"; };
+		8F0BB5269B0B0015F293C29C4DA63341 /* Pods-LeeLockViewUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LeeLockViewUITests.modulemap"; sourceTree = "<group>"; };
+		8F8B5905E1883C198C28DA5BF7B63613 /* Pods-LeeLockViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeeLockViewUITests.release.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96178AAB2305E54381F7C76F89E3CEF5 /* LockItemView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockItemView.swift; sourceTree = "<group>"; };
+		9DEBA111BEC2BDAC37A6CEF0258C946C /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = en.lproj; sourceTree = "<group>"; };
+		A0D11541D6BA853070785EE7640C09DC /* Pods-LeeLockViewTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LeeLockViewTests.modulemap"; sourceTree = "<group>"; };
+		A0F3FE45BCBD9A05157B1AE1F04404DF /* Pods-LeeLockViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeeLockViewTests.release.xcconfig"; sourceTree = "<group>"; };
+		A14E2DE2B68CFF4F222B43AAEE5EAA6F /* Pods_LeeLockViewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LeeLockViewUITests.framework; path = "Pods-LeeLockViewUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5529CA508F0EDD0D4FA1DF953D2EDC7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD2E0F669FA76C045C4948DCEE4C9C91 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B143945DF7C3EDBD6CEE00E424FBEB38 /* LockViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
+		B21621F08180AAE29661F0A97C2B4D8D /* Pods-LeeLockView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LeeLockView-umbrella.h"; sourceTree = "<group>"; };
+		B55E4CA7CED4A9C25390ECC95CDF4D81 /* Pods-LeeLockViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeeLockViewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B72E91DE8799AFF0CBEF4A4570655BE1 /* LockView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LockView.xcconfig; sourceTree = "<group>"; };
+		BB01E0A3C4B8F2E473D400E61A9E5712 /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
+		C0278507B08CB6C77C685A53BD619DF7 /* Commons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		C2F29A9E9AFE105D9D06D16CBE50F0BD /* LockView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LockView-prefix.pch"; sourceTree = "<group>"; };
+		C84288532C2C6476335162C81DA7A238 /* Pods-LeeLockViewUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LeeLockViewUITests-umbrella.h"; sourceTree = "<group>"; };
+		D0C578393ACB898E5A6925B7B871B5B9 /* LockView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LockView-umbrella.h"; sourceTree = "<group>"; };
+		D203D27A9A5A8570C53AEF0C49C3563F /* Pods-LeeLockViewUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LeeLockViewUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D389970F0ED970C18D3EC6FE6F70CC60 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4FB8BC15448990AB69893B473305D9C /* ResourceBundle-LockView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-LockView-Info.plist"; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DA14C6A5A38B91B633C66B1E87ABC956 /* LockIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockIndicatorView.swift; sourceTree = "<group>"; };
+		E1F71A4F29151A70AB9A64ECB0AFA759 /* LockView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		E6673E7482295A8EFFC485975BA4F350 /* Pods-LeeLockViewUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LeeLockViewUITests-dummy.m"; sourceTree = "<group>"; };
+		E704B4DC6D4A44464B09E8A074A73891 /* LockView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LockView.h; sourceTree = "<group>"; };
+		F812D30CB69203CD7E2A50FA43289A79 /* LockView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LockView-dummy.m"; sourceTree = "<group>"; };
+		FC7633A22404223F69F6B354B7885E2C /* Pods-LeeLockView-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeeLockView-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00CDB1454A1F97EF34F21E267FF0194D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35F995E483331E17270701B9BA062928 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAC05EF75FD4C1192F9B3B37DDD9F358 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13C306BF4978503B3F9A1EB8AA6AF23B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5498FADC9C9B5C3B62EAAC69691FABB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5237361CA99ED79A9EB3EA4F9344A173 /* Foundation.framework in Frameworks */,
+				E73E12921756BE275D75DF37A661E28D /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1DB7B583F49453216D545CF66330DAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F263875601067009822B402E61C3D797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23D13E80FDC4398040E0E33A58527046 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		032AB8DD0C1B6E3D6B126808D37E41B4 /* LockView */ = {
+			isa = PBXGroup;
+			children = (
+				103D533F7CCCB6A614A72310EA44A824 /* Classes */,
+			);
+			name = LockView;
+			path = LockView;
+			sourceTree = "<group>";
+		};
+		07DBBEFC5999938B094B3CC36CB1DAEE /* Pods-LeeLockView */ = {
+			isa = PBXGroup;
+			children = (
+				311CF278813111D6D938C91CAF25AF57 /* Info.plist */,
+				31DCD124A169E397D634D3320EBDAF92 /* Pods-LeeLockView.modulemap */,
+				3598BC0A1CA1BB8B31994445BE7F5C2C /* Pods-LeeLockView-acknowledgements.markdown */,
+				453F333B1D09D5BF4512AE861BA3FD9D /* Pods-LeeLockView-acknowledgements.plist */,
+				2C3B86A3E816203D9D96D0AF50A5BE15 /* Pods-LeeLockView-dummy.m */,
+				65374734A4ECECF11A3E0F5B31D8C9FB /* Pods-LeeLockView-frameworks.sh */,
+				FC7633A22404223F69F6B354B7885E2C /* Pods-LeeLockView-resources.sh */,
+				B21621F08180AAE29661F0A97C2B4D8D /* Pods-LeeLockView-umbrella.h */,
+				61C366D913F100BABDEA1FA2EE5392E4 /* Pods-LeeLockView.debug.xcconfig */,
+				03CE3C5EE7DBE23B465D9F43D069BEC2 /* Pods-LeeLockView.release.xcconfig */,
+			);
+			name = "Pods-LeeLockView";
+			path = "Target Support Files/Pods-LeeLockView";
+			sourceTree = "<group>";
+		};
+		103D533F7CCCB6A614A72310EA44A824 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C0278507B08CB6C77C685A53BD619DF7 /* Commons.swift */,
+				DA14C6A5A38B91B633C66B1E87ABC956 /* LockIndicatorView.swift */,
+				2F3633289788DABB5B1CB63EE994512E /* LockInfoStorage.swift */,
+				96178AAB2305E54381F7C76F89E3CEF5 /* LockItemView.swift */,
+				06D2A455425C96A7FC6D1791F0D93A90 /* LockPreference.swift */,
+				8C32DFA08A252780B43706F6003B1066 /* LockSettingViewController.swift */,
+				E704B4DC6D4A44464B09E8A074A73891 /* LockView.h */,
+				E1F71A4F29151A70AB9A64ECB0AFA759 /* LockView.swift */,
+				B143945DF7C3EDBD6CEE00E424FBEB38 /* LockViewController.swift */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		181E099CC5F9DA49F5B8894E237FEA99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11EB0054DBE88F08E9D0FEEC948F3726 /* LockView.bundle */,
+				6CB033E3A960C3C1CDB6B8A4FC7D77EA /* LockView.framework */,
+				1D8F6C46D7ED7FBDEA1AD15DE72EA0D8 /* Pods_LeeLockView.framework */,
+				79C0F678D5EA5E18CA464BC5B39A5463 /* Pods_LeeLockViewTests.framework */,
+				A14E2DE2B68CFF4F222B43AAEE5EAA6F /* Pods_LeeLockViewUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1ACA490303D0CBFD2D8A0F07584112CC /* Pods-LeeLockViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD2E0F669FA76C045C4948DCEE4C9C91 /* Info.plist */,
+				A0D11541D6BA853070785EE7640C09DC /* Pods-LeeLockViewTests.modulemap */,
+				579AE94E4C5122CFA9454616D5AFB9C6 /* Pods-LeeLockViewTests-acknowledgements.markdown */,
+				5C7F60DAD314812AF486368D817A1A30 /* Pods-LeeLockViewTests-acknowledgements.plist */,
+				1B77E3D6BD23E7FB00683ADF6A71EA2C /* Pods-LeeLockViewTests-dummy.m */,
+				18A970C6BC2E3700BEF258535E846780 /* Pods-LeeLockViewTests-frameworks.sh */,
+				2DE2EAA1D86DB7D1940FAD73BE3113CA /* Pods-LeeLockViewTests-resources.sh */,
+				74184AA58088079C3197B4D660C96CD9 /* Pods-LeeLockViewTests-umbrella.h */,
+				B55E4CA7CED4A9C25390ECC95CDF4D81 /* Pods-LeeLockViewTests.debug.xcconfig */,
+				A0F3FE45BCBD9A05157B1AE1F04404DF /* Pods-LeeLockViewTests.release.xcconfig */,
+			);
+			name = "Pods-LeeLockViewTests";
+			path = "Target Support Files/Pods-LeeLockViewTests";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		49F83CADD20605A5CA403EAE44BD40F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				99DF2B1AD8DADA327EDEA60DACBC4127 /* LockView */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4B12E03947C70BB31C17F35EF1DEB23A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				07DBBEFC5999938B094B3CC36CB1DAEE /* Pods-LeeLockView */,
+				1ACA490303D0CBFD2D8A0F07584112CC /* Pods-LeeLockViewTests */,
+				FD22DFCF0BFE527D9FEABCF66F089096 /* Pods-LeeLockViewUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				873C01F183C58AAF0BED56C64054E11F /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				181E099CC5F9DA49F5B8894E237FEA99 /* Products */,
+				4B12E03947C70BB31C17F35EF1DEB23A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8162CB25B8B8CE1C82B52CB85765DDB1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9DEBA111BEC2BDAC37A6CEF0258C946C /* en.lproj */,
+				BB01E0A3C4B8F2E473D400E61A9E5712 /* zh-Hans.lproj */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		873C01F183C58AAF0BED56C64054E11F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F188AFD54B5D6287796AB63C666D83A /* LockView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		99DF2B1AD8DADA327EDEA60DACBC4127 /* LockView */ = {
+			isa = PBXGroup;
+			children = (
+				8162CB25B8B8CE1C82B52CB85765DDB1 /* Resources */,
+			);
+			name = LockView;
+			path = LockView;
+			sourceTree = "<group>";
+		};
+		9F188AFD54B5D6287796AB63C666D83A /* LockView */ = {
+			isa = PBXGroup;
+			children = (
+				032AB8DD0C1B6E3D6B126808D37E41B4 /* LockView */,
+				49F83CADD20605A5CA403EAE44BD40F1 /* Resources */,
+				E76AC5C660B64E9684AA3C9ED9D23340 /* Support Files */,
+			);
+			name = LockView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E76AC5C660B64E9684AA3C9ED9D23340 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5529CA508F0EDD0D4FA1DF953D2EDC7 /* Info.plist */,
+				39F5FE46FA364A6C37A899392A8B850B /* LockView.modulemap */,
+				B72E91DE8799AFF0CBEF4A4570655BE1 /* LockView.xcconfig */,
+				F812D30CB69203CD7E2A50FA43289A79 /* LockView-dummy.m */,
+				C2F29A9E9AFE105D9D06D16CBE50F0BD /* LockView-prefix.pch */,
+				D0C578393ACB898E5A6925B7B871B5B9 /* LockView-umbrella.h */,
+				D4FB8BC15448990AB69893B473305D9C /* ResourceBundle-LockView-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LockView";
+			sourceTree = "<group>";
+		};
+		FD22DFCF0BFE527D9FEABCF66F089096 /* Pods-LeeLockViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D389970F0ED970C18D3EC6FE6F70CC60 /* Info.plist */,
+				8F0BB5269B0B0015F293C29C4DA63341 /* Pods-LeeLockViewUITests.modulemap */,
+				2E3F3D46E07F2805EF5434F854E8EA03 /* Pods-LeeLockViewUITests-acknowledgements.markdown */,
+				D203D27A9A5A8570C53AEF0C49C3563F /* Pods-LeeLockViewUITests-acknowledgements.plist */,
+				E6673E7482295A8EFFC485975BA4F350 /* Pods-LeeLockViewUITests-dummy.m */,
+				3B59C8CF0D742B40EAF5F10B4C2D1633 /* Pods-LeeLockViewUITests-frameworks.sh */,
+				3449C27AC0CF6F18B53F0FBDA05189F0 /* Pods-LeeLockViewUITests-resources.sh */,
+				C84288532C2C6476335162C81DA7A238 /* Pods-LeeLockViewUITests-umbrella.h */,
+				6040794B8F3FC5F6581949D80A910638 /* Pods-LeeLockViewUITests.debug.xcconfig */,
+				8F8B5905E1883C198C28DA5BF7B63613 /* Pods-LeeLockViewUITests.release.xcconfig */,
+			);
+			name = "Pods-LeeLockViewUITests";
+			path = "Target Support Files/Pods-LeeLockViewUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		202B82A23F92E2B54D8D8138FFE8911D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1341DFB77312D8CA20E0427D2B4A6084 /* Pods-LeeLockViewUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2397A41D3F016F375CA1FEFE321B73F5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CBA4183E16133FDC42472A8CA58B861 /* LockView-umbrella.h in Headers */,
+				6DA5F35188A72777A28F1E140362AF86 /* LockView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC6FB4FC292C8FFB73DA0D39433E672 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77F89D8FF924802E36927865A4F80410 /* Pods-LeeLockView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		830202B918EE778CC2617F41D704847B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF8D3EDA60BF90901C50BFF3364D45A6 /* Pods-LeeLockViewTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		05B6C49F321FD0A62D81FBCFA9D160DC /* Pods-LeeLockViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E1E088A2D5CBD7B9B6534E0757276CD /* Build configuration list for PBXNativeTarget "Pods-LeeLockViewTests" */;
+			buildPhases = (
+				17FAAEA944346E192BF86A988D0B6982 /* Sources */,
+				F263875601067009822B402E61C3D797 /* Frameworks */,
+				830202B918EE778CC2617F41D704847B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-LeeLockViewTests";
+			productName = "Pods-LeeLockViewTests";
+			productReference = 79C0F678D5EA5E18CA464BC5B39A5463 /* Pods_LeeLockViewTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		30C04ACA98D4A4622C0BAF41C68E892A /* Pods-LeeLockView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 215870515A15EBAC765A1E8E123C7E85 /* Build configuration list for PBXNativeTarget "Pods-LeeLockView" */;
+			buildPhases = (
+				A988FD36357272C9A047F49299A6E9BA /* Sources */,
+				00CDB1454A1F97EF34F21E267FF0194D /* Frameworks */,
+				2BC6FB4FC292C8FFB73DA0D39433E672 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F75A9F4A9333567A4EE1F900DBBD3F3 /* PBXTargetDependency */,
+			);
+			name = "Pods-LeeLockView";
+			productName = "Pods-LeeLockView";
+			productReference = 1D8F6C46D7ED7FBDEA1AD15DE72EA0D8 /* Pods_LeeLockView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8546BABC21E676D8C5EB89CC6C6CC668 /* LockView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB8EA9A7BB2C1BF0AAF75B0077060D27 /* Build configuration list for PBXNativeTarget "LockView" */;
+			buildPhases = (
+				F0970B5CF1645482B3818E4D4919AD7C /* Sources */,
+				D5498FADC9C9B5C3B62EAAC69691FABB /* Frameworks */,
+				6933DE26447F94B3ED4720D4D43406C7 /* Resources */,
+				2397A41D3F016F375CA1FEFE321B73F5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F6DBD377663684B36441EB97F7413D2 /* PBXTargetDependency */,
+			);
+			name = LockView;
+			productName = LockView;
+			productReference = 6CB033E3A960C3C1CDB6B8A4FC7D77EA /* LockView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C6581C556939A0B2A1090935454B3867 /* LockView-LockView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84DD3F9ED576C8D63FBCB3FEBCA3CAE6 /* Build configuration list for PBXNativeTarget "LockView-LockView" */;
+			buildPhases = (
+				C6D8265E830A545C2AC902FB33CDDDB9 /* Sources */,
+				E1DB7B583F49453216D545CF66330DAA /* Frameworks */,
+				2B7287E530C536F39317C5E46851047E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LockView-LockView";
+			productName = "LockView-LockView";
+			productReference = 11EB0054DBE88F08E9D0FEEC948F3726 /* LockView.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E6CB7A4E1A3837310A3D16A9FFA4D458 /* Pods-LeeLockViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB9054FAB94F0B348A58278B47795027 /* Build configuration list for PBXNativeTarget "Pods-LeeLockViewUITests" */;
+			buildPhases = (
+				0A3CD74A36FE607D41E56C26486C4DB6 /* Sources */,
+				CAC05EF75FD4C1192F9B3B37DDD9F358 /* Frameworks */,
+				202B82A23F92E2B54D8D8138FFE8911D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-LeeLockViewUITests";
+			productName = "Pods-LeeLockViewUITests";
+			productReference = A14E2DE2B68CFF4F222B43AAEE5EAA6F /* Pods_LeeLockViewUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 181E099CC5F9DA49F5B8894E237FEA99 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8546BABC21E676D8C5EB89CC6C6CC668 /* LockView */,
+				C6581C556939A0B2A1090935454B3867 /* LockView-LockView */,
+				30C04ACA98D4A4622C0BAF41C68E892A /* Pods-LeeLockView */,
+				05B6C49F321FD0A62D81FBCFA9D160DC /* Pods-LeeLockViewTests */,
+				E6CB7A4E1A3837310A3D16A9FFA4D458 /* Pods-LeeLockViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2B7287E530C536F39317C5E46851047E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59AECB23D75F59FA42CA4AC9DC810199 /* en.lproj in Resources */,
+				8534EE1DF898E268560AC1FAB7BCAC1C /* zh-Hans.lproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6933DE26447F94B3ED4720D4D43406C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2560D3D9165EE3ED088B04931C7E019F /* LockView.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A3CD74A36FE607D41E56C26486C4DB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7C3986BEA0B5F3506ED9CF09E8A82E7 /* Pods-LeeLockViewUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17FAAEA944346E192BF86A988D0B6982 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDB6759AF3EB7D61CD238E60C44BB53A /* Pods-LeeLockViewTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A988FD36357272C9A047F49299A6E9BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D1CA63B1CB927F6F518BCF43C4A0DFF /* Pods-LeeLockView-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6D8265E830A545C2AC902FB33CDDDB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0970B5CF1645482B3818E4D4919AD7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A36FC9F6D7421195E2879FB9429AF61C /* Commons.swift in Sources */,
+				81618571120F26F0B66DA7F31BB9DF10 /* LockIndicatorView.swift in Sources */,
+				59499F9BAB565B8D8FA28C5137C5764A /* LockInfoStorage.swift in Sources */,
+				54F18C59810A30595A5B00A826522BE1 /* LockItemView.swift in Sources */,
+				1403C23B6C54BF8349CF8E12A59FCC8F /* LockPreference.swift in Sources */,
+				B907F2464B4DF9B6607D4DB889A4F72D /* LockSettingViewController.swift in Sources */,
+				B28D8C9875C488D8EB4EAAB211AF790B /* LockView-dummy.m in Sources */,
+				BD7F81AEF3F80D145A31752660F9BEB8 /* LockView.swift in Sources */,
+				22E3758F07CA40882562E3FFEE341C53 /* LockViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0F75A9F4A9333567A4EE1F900DBBD3F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LockView;
+			target = 8546BABC21E676D8C5EB89CC6C6CC668 /* LockView */;
+			targetProxy = 2C4189B186DE18E008E0F964E58F875E /* PBXContainerItemProxy */;
+		};
+		1F6DBD377663684B36441EB97F7413D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LockView-LockView";
+			target = C6581C556939A0B2A1090935454B3867 /* LockView-LockView */;
+			targetProxy = 87B97DCED68B78F32E3EAE55B2366F4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09B39B5F3B15B697FB9D71FCA664669D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F8B5905E1883C198C28DA5BF7B63613 /* Pods-LeeLockViewUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LeeLockViewUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeeLockViewUITests/Pods-LeeLockViewUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LeeLockViewUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		34FE9531DA9AF2820790339988D5FF41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		82E7BC25C98581D96231FE7FD12E2216 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B72E91DE8799AFF0CBEF4A4570655BE1 /* LockView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LockView/LockView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LockView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LockView/LockView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LockView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8484F624579C9A9449B0FBE592B3E98C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B72E91DE8799AFF0CBEF4A4570655BE1 /* LockView.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LockView";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/LockView/ResourceBundle-LockView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = LockView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		88E5C6F4438F16FF83381297967E0BB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61C366D913F100BABDEA1FA2EE5392E4 /* Pods-LeeLockView.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LeeLockView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeeLockView/Pods-LeeLockView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LeeLockView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8BFD6C80F89A234A74EBC6A7145D08DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6040794B8F3FC5F6581949D80A910638 /* Pods-LeeLockViewUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LeeLockViewUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeeLockViewUITests/Pods-LeeLockViewUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LeeLockViewUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9E2F61F55ED4BB77A3F2D9DDA99C7959 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03CE3C5EE7DBE23B465D9F43D069BEC2 /* Pods-LeeLockView.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LeeLockView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeeLockView/Pods-LeeLockView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LeeLockView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9E32589B21428D2C569B7C74EB28A4AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B72E91DE8799AFF0CBEF4A4570655BE1 /* LockView.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LockView";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/LockView/ResourceBundle-LockView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = LockView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A7CDE61BEBB94F057E8BC40C4905909A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B55E4CA7CED4A9C25390ECC95CDF4D81 /* Pods-LeeLockViewTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LeeLockViewTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeeLockViewTests/Pods-LeeLockViewTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LeeLockViewTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AF6870D36CF55E62CF7E1C549901E174 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0F3FE45BCBD9A05157B1AE1F04404DF /* Pods-LeeLockViewTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LeeLockViewTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeeLockViewTests/Pods-LeeLockViewTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LeeLockViewTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C104F7F091290C3D1E248192F07FE689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		FC10E24F1AA734BE8151C42D9C40EE83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B72E91DE8799AFF0CBEF4A4570655BE1 /* LockView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LockView/LockView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LockView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LockView/LockView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LockView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E1E088A2D5CBD7B9B6534E0757276CD /* Build configuration list for PBXNativeTarget "Pods-LeeLockViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7CDE61BEBB94F057E8BC40C4905909A /* Debug */,
+				AF6870D36CF55E62CF7E1C549901E174 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		215870515A15EBAC765A1E8E123C7E85 /* Build configuration list for PBXNativeTarget "Pods-LeeLockView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88E5C6F4438F16FF83381297967E0BB1 /* Debug */,
+				9E2F61F55ED4BB77A3F2D9DDA99C7959 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C104F7F091290C3D1E248192F07FE689 /* Debug */,
+				34FE9531DA9AF2820790339988D5FF41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84DD3F9ED576C8D63FBCB3FEBCA3CAE6 /* Build configuration list for PBXNativeTarget "LockView-LockView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E32589B21428D2C569B7C74EB28A4AF /* Debug */,
+				8484F624579C9A9449B0FBE592B3E98C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB8EA9A7BB2C1BF0AAF75B0077060D27 /* Build configuration list for PBXNativeTarget "LockView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC10E24F1AA734BE8151C42D9C40EE83 /* Debug */,
+				82E7BC25C98581D96231FE7FD12E2216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB9054FAB94F0B348A58278B47795027 /* Build configuration list for PBXNativeTarget "Pods-LeeLockViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BFD6C80F89A234A74EBC6A7145D08DD /* Debug */,
+				09B39B5F3B15B697FB9D71FCA664669D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

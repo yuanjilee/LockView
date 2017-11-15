@@ -1,0 +1,16 @@
+PODS:
+  - LockView (3.0.0)
+
+DEPENDENCIES:
+  - LockView (from `../`)
+
+EXTERNAL SOURCES:
+  LockView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LockView: b9ad7fcce7fda1bd6fa22ebe964925a3642d22ec
+
+PODFILE CHECKSUM: e9d40e702c1370ee6ba65077bd888011990cecf3
+
+COCOAPODS: 1.2.1

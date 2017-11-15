@@ -1,0 +1,6 @@
+framework module Pods_LeeLockViewUITests {
+  umbrella header "Pods-LeeLockViewUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
