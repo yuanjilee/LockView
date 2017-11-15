@@ -7,15 +7,20 @@
 
 
 func LeeLocalizedString(_ key: String, comment: String) -> String {
-//  return NSLocalizedString(key, tableName: nil, bundle: Bundle(for: LockView.self), value: "", comment: comment)
+//  return NSLocalizedString(key, tableName: "LockView", bundle: Bundle(identifier: "org.cocoapods.LockView")!, value: "", comment: comment)
   
-//  NSBundle *containingBundle = [NSBundle bundleForClass:[ClassInFramework class]];
-//  NSURL *bundleURL = [containingBundle URLForResource:@"CTAssetsPickerController" withExtension:@"bundle"];
-//  NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
+//  let containingBundle = Bundle(for: LockView.self)
+//  let bundleURL = containingBundle.url(forResource: "LockView", withExtension: "bundle")
+//  let bundle = Bundle(url: bundleURL!)
   
-  let containingBundle = Bundle(for: LockView.self)
-  let bundleURL = containingBundle.url(forResource: "LockView", withExtension: "bundle")
-  let bundle = Bundle(url: bundleURL!)
+  let containingBundle = Bundle(identifier: "org.cocoapods.LockView")
+  let bundlePath = containingBundle?.path(forResource: "LockView", ofType: "bundle")
+  return Bundle(path: bundlePath!)?.localizedString(forKey: key, value: "", table: "LockView") ?? ""
+}
+
+func getImagePath(name: String) -> String {
   
-  return NSLocalizedString(key, tableName: nil, bundle: bundle!, value: "", comment: comment)
+  let containingBundle = Bundle(identifier: "org.cocoapods.LockView")
+  let path = containingBundle?.path(forResource: name, ofType: nil, inDirectory: "LockView.bundle")
+  return path ?? ""
 }

@@ -55,15 +55,7 @@ public class LockViewController: UIViewController {
   lazy var forgetBtn: UIButton = { [unowned self] in
     let forgetBtn: UIButton = UIButton(type: .custom)
     forgetBtn.addTarget(self, action: #selector(LockViewController._forgetBtnClick), for: .touchUpInside)
-//    forgetBtn.setTitle(LeeLocalizedString("FORGET_PASSWORD", comment: ""), for: UIControlState())
-    forgetBtn.setTitle(NSLocalizedString("FORGET_PASSWORD", tableName: nil, bundle: Bundle(identifier: "org.cocoapods.LockView")!, value: "", comment: ""), for: UIControlState())
-    
-    let containingBundle = Bundle(for: LockView.self)
-    let bundlePath = containingBundle.path(forResource: "LockView", ofType: "bundle")
-    let bundle = Bundle(path: bundlePath!)
-    let a =  NSLocalizedString("FORGET_PASSWORD", tableName: nil, bundle: bundle!, value: "", comment: "comment")
-    debugPrint(a)
-    
+    forgetBtn.setTitle(LeeLocalizedString("FORGET_PASSWORD", comment: ""), for: UIControlState())
     forgetBtn.setTitleColor(kForgetBtnColorNormal, for: UIControlState())
     forgetBtn.titleLabel?.font = UIFont.systemFont(ofSize: kSmallFontSize)
     return forgetBtn
@@ -157,7 +149,8 @@ extension LockViewController {
 //      let me: WTCUser = WTCDirector.sharedDirector().me()
 //      _avatarImageView.WTK_setAvatarForUser(me, length: 35)
       
-      _avatarImageView.image = UIImage(named: "ico_person_default")
+//      _avatarImageView.image = UIImage(named: "ico_person_default")
+      _avatarImageView.image = UIImage(contentsOfFile: getImagePath(name: "ico_person_default@2x.png"))
       
       view.addSubview(_avatarImageView)
       

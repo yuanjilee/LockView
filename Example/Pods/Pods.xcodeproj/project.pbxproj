@@ -13,18 +13,21 @@
 		22E3758F07CA40882562E3FFEE341C53 /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143945DF7C3EDBD6CEE00E424FBEB38 /* LockViewController.swift */; };
 		23D13E80FDC4398040E0E33A58527046 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		2560D3D9165EE3ED088B04931C7E019F /* LockView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11EB0054DBE88F08E9D0FEEC948F3726 /* LockView.bundle */; };
+		2B1E0508899DB3D4516EAC2EF25A4990 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 290E883B4AF8E8774D0AD8F6F8785F3D /* zh-Hans.lproj */; };
 		35F995E483331E17270701B9BA062928 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		3CBA4183E16133FDC42472A8CA58B861 /* LockView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C578393ACB898E5A6925B7B871B5B9 /* LockView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5237361CA99ED79A9EB3EA4F9344A173 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		54F18C59810A30595A5B00A826522BE1 /* LockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96178AAB2305E54381F7C76F89E3CEF5 /* LockItemView.swift */; };
 		59499F9BAB565B8D8FA28C5137C5764A /* LockInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3633289788DABB5B1CB63EE994512E /* LockInfoStorage.swift */; };
-		59AECB23D75F59FA42CA4AC9DC810199 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9DEBA111BEC2BDAC37A6CEF0258C946C /* en.lproj */; };
+		6090183235611FE5A63F64515244A1AB /* ico_person_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01788915D32BD64F6BB8065BDDD6849B /* ico_person_default@2x.png */; };
+		647E7A911958588F3F25D40341A530AF /* ico_person_default.png in Resources */ = {isa = PBXBuildFile; fileRef = A28AC6C636BDC4980E614C024EE56C72 /* ico_person_default.png */; };
 		6D1CA63B1CB927F6F518BCF43C4A0DFF /* Pods-LeeLockView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B86A3E816203D9D96D0AF50A5BE15 /* Pods-LeeLockView-dummy.m */; };
 		6DA5F35188A72777A28F1E140362AF86 /* LockView.h in Headers */ = {isa = PBXBuildFile; fileRef = E704B4DC6D4A44464B09E8A074A73891 /* LockView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		731552C99BEB8E134BA711DDD6D09E08 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DDE2C39FC28A240CD681BAC50CECC888 /* en.lproj */; };
 		77F89D8FF924802E36927865A4F80410 /* Pods-LeeLockView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B21621F08180AAE29661F0A97C2B4D8D /* Pods-LeeLockView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81618571120F26F0B66DA7F31BB9DF10 /* LockIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA14C6A5A38B91B633C66B1E87ABC956 /* LockIndicatorView.swift */; };
-		8534EE1DF898E268560AC1FAB7BCAC1C /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BB01E0A3C4B8F2E473D400E61A9E5712 /* zh-Hans.lproj */; };
 		A36FC9F6D7421195E2879FB9429AF61C /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0278507B08CB6C77C685A53BD619DF7 /* Commons.swift */; };
+		A6010C1FC9BACE7E3523DF32A119BDB2 /* navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36294A375B321A4944B0C357AEFAF242 /* navigation_back@2x.png */; };
 		B28D8C9875C488D8EB4EAAB211AF790B /* LockView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F812D30CB69203CD7E2A50FA43289A79 /* LockView-dummy.m */; };
 		B907F2464B4DF9B6607D4DB889A4F72D /* LockSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C32DFA08A252780B43706F6003B1066 /* LockSettingViewController.swift */; };
 		BD7F81AEF3F80D145A31752660F9BEB8 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F71A4F29151A70AB9A64ECB0AFA759 /* LockView.swift */; };
@@ -52,12 +55,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01788915D32BD64F6BB8065BDDD6849B /* ico_person_default@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "ico_person_default@2x.png"; sourceTree = "<group>"; };
 		03CE3C5EE7DBE23B465D9F43D069BEC2 /* Pods-LeeLockView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeeLockView.release.xcconfig"; sourceTree = "<group>"; };
 		06D2A455425C96A7FC6D1791F0D93A90 /* LockPreference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockPreference.swift; sourceTree = "<group>"; };
 		11EB0054DBE88F08E9D0FEEC948F3726 /* LockView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LockView.bundle; path = LockView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A970C6BC2E3700BEF258535E846780 /* Pods-LeeLockViewTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeeLockViewTests-frameworks.sh"; sourceTree = "<group>"; };
 		1B77E3D6BD23E7FB00683ADF6A71EA2C /* Pods-LeeLockViewTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LeeLockViewTests-dummy.m"; sourceTree = "<group>"; };
 		1D8F6C46D7ED7FBDEA1AD15DE72EA0D8 /* Pods_LeeLockView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LeeLockView.framework; path = "Pods-LeeLockView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		290E883B4AF8E8774D0AD8F6F8785F3D /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
 		2C3B86A3E816203D9D96D0AF50A5BE15 /* Pods-LeeLockView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LeeLockView-dummy.m"; sourceTree = "<group>"; };
 		2DE2EAA1D86DB7D1940FAD73BE3113CA /* Pods-LeeLockViewTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeeLockViewTests-resources.sh"; sourceTree = "<group>"; };
 		2E3F3D46E07F2805EF5434F854E8EA03 /* Pods-LeeLockViewUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LeeLockViewUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 		31DCD124A169E397D634D3320EBDAF92 /* Pods-LeeLockView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LeeLockView.modulemap"; sourceTree = "<group>"; };
 		3449C27AC0CF6F18B53F0FBDA05189F0 /* Pods-LeeLockViewUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeeLockViewUITests-resources.sh"; sourceTree = "<group>"; };
 		3598BC0A1CA1BB8B31994445BE7F5C2C /* Pods-LeeLockView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LeeLockView-acknowledgements.markdown"; sourceTree = "<group>"; };
+		36294A375B321A4944B0C357AEFAF242 /* navigation_back@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "navigation_back@2x.png"; sourceTree = "<group>"; };
 		39F5FE46FA364A6C37A899392A8B850B /* LockView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LockView.modulemap; sourceTree = "<group>"; };
 		3B59C8CF0D742B40EAF5F10B4C2D1633 /* Pods-LeeLockViewUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeeLockViewUITests-frameworks.sh"; sourceTree = "<group>"; };
 		453F333B1D09D5BF4512AE861BA3FD9D /* Pods-LeeLockView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LeeLockView-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -82,10 +88,10 @@
 		8F8B5905E1883C198C28DA5BF7B63613 /* Pods-LeeLockViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeeLockViewUITests.release.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		96178AAB2305E54381F7C76F89E3CEF5 /* LockItemView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockItemView.swift; sourceTree = "<group>"; };
-		9DEBA111BEC2BDAC37A6CEF0258C946C /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = en.lproj; sourceTree = "<group>"; };
 		A0D11541D6BA853070785EE7640C09DC /* Pods-LeeLockViewTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LeeLockViewTests.modulemap"; sourceTree = "<group>"; };
 		A0F3FE45BCBD9A05157B1AE1F04404DF /* Pods-LeeLockViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeeLockViewTests.release.xcconfig"; sourceTree = "<group>"; };
 		A14E2DE2B68CFF4F222B43AAEE5EAA6F /* Pods_LeeLockViewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LeeLockViewUITests.framework; path = "Pods-LeeLockViewUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A28AC6C636BDC4980E614C024EE56C72 /* ico_person_default.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = ico_person_default.png; sourceTree = "<group>"; };
 		A5529CA508F0EDD0D4FA1DF953D2EDC7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD2E0F669FA76C045C4948DCEE4C9C91 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B143945DF7C3EDBD6CEE00E424FBEB38 /* LockViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +99,6 @@
 		B55E4CA7CED4A9C25390ECC95CDF4D81 /* Pods-LeeLockViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeeLockViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B72E91DE8799AFF0CBEF4A4570655BE1 /* LockView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LockView.xcconfig; sourceTree = "<group>"; };
-		BB01E0A3C4B8F2E473D400E61A9E5712 /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
 		C0278507B08CB6C77C685A53BD619DF7 /* Commons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		C2F29A9E9AFE105D9D06D16CBE50F0BD /* LockView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LockView-prefix.pch"; sourceTree = "<group>"; };
 		C84288532C2C6476335162C81DA7A238 /* Pods-LeeLockViewUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LeeLockViewUITests-umbrella.h"; sourceTree = "<group>"; };
@@ -103,6 +108,7 @@
 		D4FB8BC15448990AB69893B473305D9C /* ResourceBundle-LockView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-LockView-Info.plist"; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DA14C6A5A38B91B633C66B1E87ABC956 /* LockIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockIndicatorView.swift; sourceTree = "<group>"; };
+		DDE2C39FC28A240CD681BAC50CECC888 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = en.lproj; sourceTree = "<group>"; };
 		E1F71A4F29151A70AB9A64ECB0AFA759 /* LockView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		E6673E7482295A8EFFC485975BA4F350 /* Pods-LeeLockViewUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LeeLockViewUITests-dummy.m"; sourceTree = "<group>"; };
 		E704B4DC6D4A44464B09E8A074A73891 /* LockView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LockView.h; sourceTree = "<group>"; };
@@ -245,14 +251,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		49F83CADD20605A5CA403EAE44BD40F1 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				99DF2B1AD8DADA327EDEA60DACBC4127 /* LockView */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		4B12E03947C70BB31C17F35EF1DEB23A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +259,26 @@
 				FD22DFCF0BFE527D9FEABCF66F089096 /* Pods-LeeLockViewUITests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5961D183CBC7F3BB9CB5EAEFEB2FE2B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DDE2C39FC28A240CD681BAC50CECC888 /* en.lproj */,
+				290E883B4AF8E8774D0AD8F6F8785F3D /* zh-Hans.lproj */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7B073F1B2B9D23B8976831B955E22722 /* LockView */ = {
+			isa = PBXGroup;
+			children = (
+				EC6B4538B7ED08AD7FC1BE534823501A /* Assets */,
+				5961D183CBC7F3BB9CB5EAEFEB2FE2B5 /* Resources */,
+			);
+			name = LockView;
+			path = LockView;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -274,14 +292,12 @@
 			);
 			sourceTree = "<group>";
 		};
-		8162CB25B8B8CE1C82B52CB85765DDB1 /* Resources */ = {
+		85C40E239063A1D0B678F7F71C0138F2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9DEBA111BEC2BDAC37A6CEF0258C946C /* en.lproj */,
-				BB01E0A3C4B8F2E473D400E61A9E5712 /* zh-Hans.lproj */,
+				7B073F1B2B9D23B8976831B955E22722 /* LockView */,
 			);
 			name = Resources;
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		873C01F183C58AAF0BED56C64054E11F /* Development Pods */ = {
@@ -292,24 +308,34 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		99DF2B1AD8DADA327EDEA60DACBC4127 /* LockView */ = {
-			isa = PBXGroup;
-			children = (
-				8162CB25B8B8CE1C82B52CB85765DDB1 /* Resources */,
-			);
-			name = LockView;
-			path = LockView;
-			sourceTree = "<group>";
-		};
 		9F188AFD54B5D6287796AB63C666D83A /* LockView */ = {
 			isa = PBXGroup;
 			children = (
 				032AB8DD0C1B6E3D6B126808D37E41B4 /* LockView */,
-				49F83CADD20605A5CA403EAE44BD40F1 /* Resources */,
+				85C40E239063A1D0B678F7F71C0138F2 /* Resources */,
 				E76AC5C660B64E9684AA3C9ED9D23340 /* Support Files */,
 			);
 			name = LockView;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		BF768F4A6506458F5DAA148FF1F7DA08 /* ico_person_default.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				A28AC6C636BDC4980E614C024EE56C72 /* ico_person_default.png */,
+				01788915D32BD64F6BB8065BDDD6849B /* ico_person_default@2x.png */,
+			);
+			name = ico_person_default.imageset;
+			path = ico_person_default.imageset;
+			sourceTree = "<group>";
+		};
+		C3BAF9143813EB6BA0C61334B8742887 /* navigation_back.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				36294A375B321A4944B0C357AEFAF242 /* navigation_back@2x.png */,
+			);
+			name = navigation_back.imageset;
+			path = navigation_back.imageset;
 			sourceTree = "<group>";
 		};
 		E76AC5C660B64E9684AA3C9ED9D23340 /* Support Files */ = {
@@ -325,6 +351,16 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/LockView";
+			sourceTree = "<group>";
+		};
+		EC6B4538B7ED08AD7FC1BE534823501A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BF768F4A6506458F5DAA148FF1F7DA08 /* ico_person_default.imageset */,
+				C3BAF9143813EB6BA0C61334B8742887 /* navigation_back.imageset */,
+			);
+			name = Assets;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		FD22DFCF0BFE527D9FEABCF66F089096 /* Pods-LeeLockViewUITests */ = {
@@ -444,7 +480,7 @@
 			buildPhases = (
 				C6D8265E830A545C2AC902FB33CDDDB9 /* Sources */,
 				E1DB7B583F49453216D545CF66330DAA /* Frameworks */,
-				2B7287E530C536F39317C5E46851047E /* Resources */,
+				544C725F48193EF35BCF5C51D7B724C4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -503,12 +539,15 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2B7287E530C536F39317C5E46851047E /* Resources */ = {
+		544C725F48193EF35BCF5C51D7B724C4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59AECB23D75F59FA42CA4AC9DC810199 /* en.lproj in Resources */,
-				8534EE1DF898E268560AC1FAB7BCAC1C /* zh-Hans.lproj in Resources */,
+				731552C99BEB8E134BA711DDD6D09E08 /* en.lproj in Resources */,
+				647E7A911958588F3F25D40341A530AF /* ico_person_default.png in Resources */,
+				6090183235611FE5A63F64515244A1AB /* ico_person_default@2x.png in Resources */,
+				A6010C1FC9BACE7E3523DF32A119BDB2 /* navigation_back@2x.png in Resources */,
+				2B1E0508899DB3D4516EAC2EF25A4990 /* zh-Hans.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

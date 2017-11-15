@@ -78,8 +78,9 @@ extension LockSettingViewController {
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     
-    let backButtonImage: UIImage = UIImage(named: "navigation_back")!
-    navigationController?.navigationBar.tintColor = UIColor.white
+//    let backButtonImage: UIImage = UIImage(named: "navigation_back")!
+    let backButtonImage = UIImage(contentsOfFile: getImagePath(name: "navigation_back@2x.png"))
+//    navigationController?.navigationBar.tintColor = UIColor.white
     navigationController?.navigationBar.backIndicatorImage = backButtonImage
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
     navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)

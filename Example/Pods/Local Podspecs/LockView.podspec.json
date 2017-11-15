@@ -15,15 +15,15 @@
     "git": "https://github.com/yuanjilee/LeeLockView.git",
     "tag": "3.0.0"
   },
-  "resource_bundles": {
-    "LockView": [
-      "LockView/Assets.xcassets/*/*.png",
-      "LockView/Resources/*.lproj"
-    ]
-  },
   "source_files": "LockView/Classes/**/*",
   "frameworks": [
     "Foundation",
     "UIKit"
-  ]
+  ],
+  "resource_bundles": {
+    "LockView": [
+      "LockView/Assets/**/*.png",
+      "LockView/Resources/*.lproj"
+    ]
+  }
 }
