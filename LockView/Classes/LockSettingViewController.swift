@@ -18,11 +18,27 @@ import LocalAuthentication
 /// @author yuanjilee
 public class LockSettingViewController: UIViewController {
   
+  // MARK: - Enum
+  
+  enum BiometryType: Int {
+    
+    /// The device does not support biometry.
+    case none
+    
+    /// The device supports Touch ID.
+    case typeTouchID
+    
+    /// The device supports Face ID.
+    case typeFaceID
+  }
+  
+  
   //MARK: - Commons
   
   let cellIdentifier: String = "setting_identifier"
   let celltitle: [String] = [LeeLocalizedString("PATTERN_PASSWORD", comment: ""),
-                             LeeLocalizedString("TOUCH_ID", comment: ""),
+                             LeeLocalizedString("TOUCH_ID", comment: "Touch ID"),
+                             LeeLocalizedString("FACE_ID", comment: "Face ID"),
                              LeeLocalizedString("RESET_PASSWORD_GESTURE", comment: "")]
   
   
@@ -31,6 +47,7 @@ public class LockSettingViewController: UIViewController {
   fileprivate var _gestureSwith: UISwitch!
   fileprivate var _touchIDSwitch: UISwitch!
   fileprivate var _tableView: UITableView!
+  fileprivate var _biometryType: BiometryType = .none
   
   //MARK: - Lifecycle
   
@@ -90,6 +107,8 @@ extension LockSettingViewController {
     _tableView.delegate = self
     _tableView.dataSource = self
     view.addSubview(_tableView)
+    
+    _biometryType = _getBiometryType()
   }
 }
 
@@ -122,8 +141,8 @@ extension LockSettingViewController: UITableViewDelegate, UITableViewDataSource 
       return 1
     }
     else {
-      if section == 0{
-          if _isSupportTouchID() {
+      if section == 0 {
+          if _biometryType != .none {
             return 2
           }
           else {
@@ -142,9 +161,13 @@ extension LockSettingViewController: UITableViewDelegate, UITableViewDataSource 
       
       let switchState: Bool = LockInfoStorage.getSwitchState()
       if switchState {
-          if _isSupportTouchID(){
-            if (indexPath as NSIndexPath).row == 1{
-              cell.textLabel?.text = celltitle[1]
+          if _biometryType != .none {
+            if (indexPath as NSIndexPath).row == 1 {
+              if _biometryType == .typeTouchID {
+                cell.textLabel?.text = celltitle[1]
+              } else {
+                cell.textLabel?.text = celltitle[2]
+              }
               if _touchIDSwitch != nil {}
               else {
                 _setTouchIDSwitch(cell.contentView)
@@ -161,7 +184,7 @@ extension LockSettingViewController: UITableViewDelegate, UITableViewDataSource 
       }
     }
     else {
-      cell.textLabel?.text = celltitle[2]
+      cell.textLabel?.text = celltitle[3]
       cell.accessoryType = .disclosureIndicator
     }
     cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
@@ -213,10 +236,32 @@ extension LockSettingViewController {
     if #available(iOS 9.0, *)  {
       result = context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authorError)
     } else {
-      // Fallback on earlier versions
       result = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authorError)
     }
     return result
+  }
+  
+  fileprivate func _getBiometryType() -> BiometryType {
+    
+    let context: LAContext = LAContext()
+    var authorError: NSError?
+    
+    if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authorError) {
+      if #available(iOS 11.0, *) {
+        if context.biometryType == .none {
+          return .none
+        } else if context.biometryType == .typeFaceID {
+          return .typeFaceID
+        } else if context.biometryType == .typeTouchID {
+          return .typeTouchID
+        }
+      } else {
+        return .typeTouchID
+      }
+    } else {
+      return .none
+    }
+    return .none
   }
   
 }
