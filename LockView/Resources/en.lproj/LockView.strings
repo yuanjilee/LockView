@@ -30,3 +30,4 @@
 "UNLOCK_VALIDATION_WORKTILE"                 = "Unlock validation Worktile";
 "TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON"           = "Touch ID system is not turned on";
 "PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID" = "Please open the system settings for TouchID";
+"OK"                                         = "OK";

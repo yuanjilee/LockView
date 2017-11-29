@@ -393,90 +393,23 @@ extension LockViewController {
     
     if #available(iOS 9.0, *) {
       if  context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authorError) {
-        
         context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: LeeLocalizedString("UNLOCK_VALIDATION_WORKTILE", comment: ""), reply: { (success: Bool, error: Error?) -> Void in
-          
-          if success {
-            debugPrint("验证成功 \(success)")
-            self.dismiss(animated: false, completion: nil)
-          }
-          else {
-            if let error = error {
-              switch error._code {
-                
-              case LAError.Code.authenticationFailed.rawValue:
-                debugPrint("Faild")
-                
-              case LAError.Code.userCancel.rawValue:
-                debugPrint("User cancel")
-                
-              case LAError.Code.systemCancel.rawValue:
-                debugPrint("System cancel")
-                
-              case LAError.Code.touchIDLockout.rawValue:
-                debugPrint("Lock out")
-                
-              case LAError.Code.touchIDNotAvailable.rawValue:
-                debugPrint("Not avaliable")
-                
-              case LAError.Code.userFallback.rawValue:
-                debugPrint("Fallback")
-                
-              default:
-                debugPrint("Default")
-                break
-              }
-            }
-          }
+          self._evaluateBiometricsAuthority(success: success, error: error)
         })
       }
       else {
-        let unSupportAlert: UIAlertView = UIAlertView(title: LeeLocalizedString("TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON", comment: ""), message: LeeLocalizedString("PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID", comment: ""), delegate: self, cancelButtonTitle: LeeLocalizedString("OK", comment: ""))
-        unSupportAlert.tag = 10
-        unSupportAlert.show()
+        _unSupportBiometricsAlert()
       }
     }
     else {
-      // Fallback on earlier versions
       if  context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authorError) {
-        
         context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: LeeLocalizedString("UNLOCK_VALIDATION_WORKTILE", comment: ""), reply: { (success: Bool, error: Error?) -> Void in
           
-          if success {
-            debugPrint("验证成功 \(success)")
-            self.dismiss(animated: false, completion: nil)
-          }
-          else {
-            if let error = error {
-              switch error._code {
-                
-              case LAError.Code.authenticationFailed.rawValue:
-                debugPrint("Faild")
-                
-              case LAError.Code.userCancel.rawValue:
-                debugPrint("User cancel")
-                
-              case LAError.Code.systemCancel.rawValue:
-                debugPrint("System cancel")
-                
-              case LAError.Code.touchIDNotAvailable.rawValue:
-                debugPrint("Not avaliable")
-                
-              case LAError.Code.userFallback.rawValue:
-                debugPrint("Fallback")
-                
-              default:
-                debugPrint("Default")
-                break
-              }
-            }
-          }
+          self._evaluateBiometricsAuthority(success: success, error: error)
         })
       }
       else {
-        let unSupportAlert: UIAlertView = UIAlertView(title: LeeLocalizedString("TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON", comment: ""), message: LeeLocalizedString("PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID", comment: ""), delegate: self, cancelButtonTitle: LeeLocalizedString("OK", comment: ""))
-        unSupportAlert.tag = 10
-        unSupportAlert.show()
+        _unSupportBiometricsAlert()
       }
     }
   }
@@ -486,6 +419,48 @@ extension LockViewController {
   
   fileprivate func _setupApperance() {
     view.backgroundColor = kVerifyBackgroundColor
+  }
+  
+  
+  // MARK - Event
+  
+  // 验证生物识别(Touch ID、Face ID)
+  private func _evaluateBiometricsAuthority(success: Bool, error: Error?) {
+    if success {
+      self.dismiss(animated: false, completion: nil)
+    }
+    else {
+      if let error = error {
+        switch error._code {
+        case LAError.Code.authenticationFailed.rawValue:
+          debugPrint("Faild")
+          
+        case LAError.Code.userCancel.rawValue:
+          debugPrint("User cancel")
+          
+        case LAError.Code.systemCancel.rawValue:
+          debugPrint("System cancel")
+          
+        case LAError.Code.touchIDNotAvailable.rawValue:
+          debugPrint("Not avaliable")
+          
+        case LAError.Code.userFallback.rawValue:
+          debugPrint("Fallback")
+
+        default:
+          debugPrint("Default")
+          break
+        }
+      }
+    }
+  }
+  
+  // 不支持生物识别
+  private func _unSupportBiometricsAlert() {
+    let alertController = UIAlertController(title: LeeLocalizedString("TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON", comment: "未开启系统 Touch ID"), message: LeeLocalizedString("PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID", comment: "请先在系统设置-TouchID与密码中开启"), preferredStyle: .alert)
+    let cancelAction = UIAlertAction(title: LeeLocalizedString("OK", comment: "好"), style: .cancel, handler: nil)
+    alertController.addAction(cancelAction)
+    present(alertController, animated: true, completion: nil)
   }
   
 }

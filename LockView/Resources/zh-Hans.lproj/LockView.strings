@@ -30,3 +30,4 @@
 "UNLOCK_VALIDATION_WORKTILE"                 = "通过验证指纹解锁 Worktile";
 "TOUCH_ID_SYSTEM_IS_NOT_TUENED_ON"           = "未开启系统 Touch ID";
 "PLEASE_OPEN_THE_SYSTEM_SETTING_FOR_TOUCHID" = "请先在系统设置-TouchID与密码中开启";
+"OK"                                         = "好";
