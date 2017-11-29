@@ -115,7 +115,7 @@ extension LockViewController {
     if isOpenTouchIDSwitch {
       let fingerBtn: UIButton = UIButton(type: .custom)
       fingerBtn.addTarget(self, action: #selector(LockViewController._touchID), for: .touchUpInside)
-      fingerBtn.setTitle(LeeLocalizedString("FINGERPRINT_UNLOCK", comment: ""), for: UIControlState())
+      fingerBtn.setTitle(LeeLocalizedString("TOUCH_ID", comment: ""), for: UIControlState())
       fingerBtn.setTitleColor(kForgetBtnColorNormal, for: UIControlState())
       fingerBtn.titleLabel?.font = UIFont.systemFont(ofSize: kSmallFontSize)
       view.addSubview(fingerBtn)

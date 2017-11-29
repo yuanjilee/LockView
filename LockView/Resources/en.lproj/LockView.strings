@@ -14,7 +14,8 @@
 
 "GESTURE_LOCK"                               = "Gesture Lock";
 "PATTERN_PASSWORD"                           = "Pattern Password";
-"FINGERPRINT_UNLOCK"                         = "Fingerprint Unlock";
+"TOUCH_ID"                                   = "Touch ID";
+"FACE_ID"                                    = "Face ID";
 "RESET_PASSWORD_GESTURE"                     = "Reset Password gesture";
 "DRAW_GESTURE_PASSWORD"                      = "Draw gesture password";
 "ENTER_THE_GESTURE_PASSWORD"                 = "Enter the gesture password";

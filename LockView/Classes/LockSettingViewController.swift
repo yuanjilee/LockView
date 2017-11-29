@@ -22,7 +22,7 @@ public class LockSettingViewController: UIViewController {
   
   let cellIdentifier: String = "setting_identifier"
   let celltitle: [String] = [LeeLocalizedString("PATTERN_PASSWORD", comment: ""),
-                             LeeLocalizedString("FINGERPRINT_UNLOCK", comment: ""),
+                             LeeLocalizedString("TOUCH_ID", comment: ""),
                              LeeLocalizedString("RESET_PASSWORD_GESTURE", comment: "")]
   
   
