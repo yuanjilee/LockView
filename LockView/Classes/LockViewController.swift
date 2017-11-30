@@ -70,11 +70,15 @@ public class LockViewController: UIViewController {
     _setupApperance()
     _prepare()
     
-    // TouchID
-    let isOpenTouchIDSwitch = LockInfoStorage.getTouchIDState()
-    if isOpenTouchIDSwitch {
-      _touchID()
+    
+    // verify TouchID
+    if lockType == .verify {
+      let isOpenTouchIDSwitch = LockInfoStorage.getTouchIDState()
+      if isOpenTouchIDSwitch {
+        _touchID()
+      }
     }
+    
   }
 }
 

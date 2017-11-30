@@ -1,11 +1,12 @@
 
 Pod::Spec.new do |s|
   s.name         = "LockView"
-  s.version      = "3.0.0"
+  s.version      = "3.1.0"
   s.summary      = "Gesture Lock with Swift"
 
   s.description  = <<-DESC
                    Gesture Lock with Swift.
+                   Support FaceID & TouchID
                    DESC
 
   s.homepage     = "https://github.com/yuanjilee/LockView"
