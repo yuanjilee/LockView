@@ -109,20 +109,38 @@ extension LockViewController {
     view.addSubview(forgetBtn)
     forgetBtn.translatesAutoresizingMaskIntoConstraints = false
     view.addConstraints([NSLayoutConstraint(item: forgetBtn, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
-                         NSLayoutConstraint(item: forgetBtn, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10)])
+                         NSLayoutConstraint(item: forgetBtn, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10 - lee_keyWindowSafeAreaInsets.bottom)])
+    
+    // iOS 9 with new value for autolayout
+//    if #available(iOS 9.0, *) {
+//      if #available(iOS 11.0, *) {
+//        NSLayoutConstraint.activate([
+//          forgetBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+//          forgetBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+//          ])
+//      } else {
+//        // Fallback on earlier versions
+//      }
+//    } else {
+//      // Fallback on earlier versions
+//    }
     
     let isOpenTouchIDSwitch = LockInfoStorage.getTouchIDState()
     if isOpenTouchIDSwitch {
       let fingerBtn: UIButton = UIButton(type: .custom)
       fingerBtn.addTarget(self, action: #selector(LockViewController._touchID), for: .touchUpInside)
-      fingerBtn.setTitle(LeeLocalizedString("TOUCH_ID", comment: ""), for: UIControlState())
+      if LockUtils.getBiometryType() == .typeTouchID {
+        fingerBtn.setTitle(LeeLocalizedString("TOUCH_ID", comment: "Touch ID"), for: UIControlState())
+      } else {
+        fingerBtn.setTitle(LeeLocalizedString("FACE_ID", comment: "Face ID"), for: UIControlState())
+      }
       fingerBtn.setTitleColor(kForgetBtnColorNormal, for: UIControlState())
       fingerBtn.titleLabel?.font = UIFont.systemFont(ofSize: kSmallFontSize)
       view.addSubview(fingerBtn)
       
       fingerBtn.translatesAutoresizingMaskIntoConstraints = false
       view.addConstraints([NSLayoutConstraint(item: fingerBtn, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -20),
-                           NSLayoutConstraint(item: fingerBtn, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10)])
+                           NSLayoutConstraint(item: fingerBtn, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10 - lee_keyWindowSafeAreaInsets.bottom)])
       
       //忘记密码位置左移,并移除其上所有约束  或 snp.remakeContraints
       forgetBtn.removeConstraints(forgetBtn.constraints)
@@ -133,7 +151,7 @@ extension LockViewController {
       }
       
       view.addConstraints([NSLayoutConstraint(item: forgetBtn, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 20),
-                           NSLayoutConstraint(item: forgetBtn, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10)])
+                           NSLayoutConstraint(item: forgetBtn, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10 - lee_keyWindowSafeAreaInsets.bottom)])
     }
   }
   
@@ -249,6 +267,7 @@ extension LockViewController {
         
         LockInfoStorage.setLockInfo(withString: _passcodefirst)
         LockInfoStorage.setSwitchState(withBoolValue: true)
+        LockInfoStorage.setTouchIDState(withBoolValue: true)
         lock.showDismissLockView()
         //成功提示语
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1000 * USEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: { () -> Void in
